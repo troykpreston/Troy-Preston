@@ -23,19 +23,18 @@
   z-index: -2;
   inset: 0 calc(50% - 50vw);
   background:
-    radial-gradient(38% 52% at 76% 50%, color-mix(in oklab, var(--accent) 16%, transparent), transparent 72%),
-    radial-gradient(60% 40% at 78% 58%, color-mix(in oklab, var(--accent) 6%, transparent), transparent 75%),
-    radial-gradient(34% 40% at 8% 18%, color-mix(in oklab, var(--steel) 8%, transparent), transparent 72%),
-    radial-gradient(120% 60% at 50% 0%, rgb(255 255 255 / 0.55), transparent 60%);
+    radial-gradient(46% 50% at 28% 46%, color-mix(in oklab, var(--accent-2) 14%, transparent), transparent 72%),
+    radial-gradient(38% 50% at 76% 50%, color-mix(in oklab, var(--accent) 12%, transparent), transparent 72%),
+    radial-gradient(120% 60% at 50% 0%, rgb(255 255 255 / 0.7), transparent 60%);
   pointer-events: none;
   animation: hero-light 22s var(--ease-in-out) infinite alternate;
 }
 :root[data-theme="dark"] .hero::before {
   background:
-    radial-gradient(38% 52% at 76% 50%, color-mix(in oklab, var(--accent) 13%, transparent), transparent 72%),
-    radial-gradient(60% 40% at 78% 58%, color-mix(in oklab, var(--accent) 5%, transparent), transparent 75%),
-    radial-gradient(34% 40% at 8% 18%, color-mix(in oklab, var(--steel) 9%, transparent), transparent 72%),
-    radial-gradient(120% 60% at 50% 0%, rgb(255 255 255 / 0.035), transparent 60%);
+    radial-gradient(48% 52% at 30% 44%, color-mix(in oklab, var(--accent) 17%, transparent), transparent 72%),
+    radial-gradient(36% 48% at 76% 50%, color-mix(in oklab, var(--accent) 12%, transparent), transparent 72%),
+    radial-gradient(80% 50% at 50% 0%, color-mix(in oklab, var(--steel) 10%, transparent), transparent 65%),
+    linear-gradient(to bottom, #03060b, transparent 30%);
 }
 .hero::after {
   content: "";
@@ -74,7 +73,7 @@
   margin-bottom: -8px;
 }
 .hero__eyebrow .label {
-  color: var(--ink-2);
+  color: var(--accent);
   letter-spacing: 0.16em;
 }
 .hero__eyebrow-rule {
@@ -133,10 +132,11 @@
   align-items: center;
   padding: 12px 20px 12px 22px;
   border-radius: 999px;
-  background: var(--ink);
-  color: var(--paper);
+  background: linear-gradient(180deg, color-mix(in oklab, var(--accent) 88%, white), var(--accent));
+  color: #fff;
+  font-weight: 500;
   letter-spacing: 0.005em;
-  box-shadow: 0 1px 0 rgb(255 255 255 / 0.12) inset, 0 14px 28px -14px rgb(20 18 14 / 0.55);
+  box-shadow: 0 1px 0 rgb(255 255 255 / 0.22) inset, 0 12px 28px -12px color-mix(in oklab, var(--accent) 70%, transparent);
   transition:
     background-color var(--dur-fast) var(--ease-out),
     transform var(--dur-base) var(--ease-out),
@@ -146,9 +146,9 @@
   transition: transform var(--dur-base) var(--ease-out);
 }
 .hero__cta.hero__cta--primary:hover {
-  background: color-mix(in oklab, var(--ink) 88%, var(--accent));
+  background: linear-gradient(180deg, color-mix(in oklab, var(--accent-2) 80%, white), color-mix(in oklab, var(--accent) 85%, var(--accent-2)));
   transform: translateY(-1px);
-  box-shadow: 0 1px 0 rgb(255 255 255 / 0.12) inset, 0 20px 36px -16px rgb(20 18 14 / 0.6);
+  box-shadow: 0 1px 0 rgb(255 255 255 / 0.22) inset, 0 18px 40px -14px color-mix(in oklab, var(--accent) 85%, transparent);
 }
 .hero__cta--primary:hover .arrow {
   transform: translateX(4px);
@@ -166,9 +166,11 @@
   font-size: var(--fs-small);
 }
 .hero__title {
-  font-size: clamp(2.6rem, 4.9vw, 5rem);
-  line-height: 0.96;
-  letter-spacing: -0.035em;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(2.2rem, 3.85vw, 3.9rem);
+  line-height: 1.04;
+  letter-spacing: -0.038em;
   margin: 0;
   color: var(--ink);
   font-kerning: normal;
@@ -176,13 +178,15 @@
 }
 /* The italic accent reads as polished bronze — a slow sheen, not a glow. */
 .hero__title em {
-  padding-right: 0.06em;
-  font-style: italic;
+  padding-right: 0.04em;
+  font-family: inherit;
+  font-style: normal;
+  font-weight: inherit;
   background: linear-gradient(
     100deg,
     color-mix(in oklab, var(--accent) 78%, var(--ink)) 0%,
     var(--accent) 35%,
-    color-mix(in oklab, var(--accent) 60%, #f3dcbc) 50%,
+    var(--accent-2) 50%,
     var(--accent) 65%,
     color-mix(in oklab, var(--accent) 78%, var(--ink)) 100%
   );
@@ -232,8 +236,8 @@
   background: var(--paper-2);
   box-shadow:
     0 0 0 1px var(--line),
-    0 40px 80px -36px rgb(20 18 14 / 0.38),
-    0 18px 36px -20px rgb(20 18 14 / 0.22);
+    0 40px 80px -36px rgb(var(--shadow-rgb) / 0.38),
+    0 18px 36px -20px rgb(var(--shadow-rgb) / 0.22);
 }
 :root[data-theme="dark"] .show__frame {
   box-shadow:
@@ -417,8 +421,8 @@
 }
 @media (max-width: 600px) {
   .hero__title {
-    font-size: 10.8vw;
-    line-height: 0.95;
+    font-size: 8.6vw;
+    line-height: 1.06;
   }
   .hero__cell--end {
     display: none;

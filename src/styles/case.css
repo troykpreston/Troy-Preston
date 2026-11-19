@@ -532,8 +532,8 @@ html.lb-open {
    services, restrained champagne integrations. */
 
 .dg {
-  --sapphire: #3e5a86;
-  --graphite: #262624;
+  --sapphire: #2a64a3;
+  --graphite: #17212d;
   --champagne: #b39461;
   --wire: color-mix(in oklab, var(--ink) 38%, transparent);
   --dg-wired: 1;
@@ -543,8 +543,8 @@ html.lb-open {
   border-radius: var(--radius);
 }
 :root[data-theme="dark"] .dg {
-  --sapphire: #8ea8d6;
-  --graphite: #33322f;
+  --sapphire: #7db4e6;
+  --graphite: #1d2a39;
   --champagne: #d8bd8c;
 }
 
