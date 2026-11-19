@@ -1,0 +1,797 @@
+{
+  "__brand": [
+    {
+      "file": "Profile.png",
+      "src": "/media/brand/profile.webp",
+      "kind": "image",
+      "caption": "Profile",
+      "width": 1254,
+      "height": 1254
+    }
+  ],
+  "Aether": [
+    {
+      "file": "00-cover.mp4",
+      "src": "/media/aether/00-cover.mp4",
+      "kind": "video",
+      "caption": "Cover"
+    },
+    {
+      "file": "00.png",
+      "src": "/media/aether/00.webp",
+      "kind": "image",
+      "caption": "",
+      "width": 1922,
+      "height": 1148
+    },
+    {
+      "file": "02-overview.png",
+      "src": "/media/aether/02-overview.webp",
+      "kind": "image",
+      "caption": "Overview",
+      "width": 2560,
+      "height": 1920
+    },
+    {
+      "file": "03-agent-studio.png",
+      "src": "/media/aether/03-agent-studio.webp",
+      "kind": "image",
+      "caption": "Agent studio",
+      "width": 2560,
+      "height": 1920
+    },
+    {
+      "file": "04-agent-router.png",
+      "src": "/media/aether/04-agent-router.webp",
+      "kind": "image",
+      "caption": "Agent router",
+      "width": 2560,
+      "height": 1920
+    },
+    {
+      "file": "05-run-trace.png",
+      "src": "/media/aether/05-run-trace.webp",
+      "kind": "image",
+      "caption": "Run trace",
+      "width": 2560,
+      "height": 1920
+    },
+    {
+      "file": "06-approval.png",
+      "src": "/media/aether/06-approval.webp",
+      "kind": "image",
+      "caption": "Approval",
+      "width": 2560,
+      "height": 1920
+    },
+    {
+      "file": "07-evaluation.png",
+      "src": "/media/aether/07-evaluation.webp",
+      "kind": "image",
+      "caption": "Evaluation",
+      "width": 2560,
+      "height": 1920
+    },
+    {
+      "file": "08-knowledge-search.png",
+      "src": "/media/aether/08-knowledge-search.webp",
+      "kind": "image",
+      "caption": "Knowledge search",
+      "width": 2560,
+      "height": 1920
+    },
+    {
+      "file": "09-runs.png",
+      "src": "/media/aether/09-runs.webp",
+      "kind": "image",
+      "caption": "Runs",
+      "width": 2560,
+      "height": 1920
+    },
+    {
+      "file": "10-studio-library.png",
+      "src": "/media/aether/10-studio-library.webp",
+      "kind": "image",
+      "caption": "Studio library",
+      "width": 2560,
+      "height": 1920
+    },
+    {
+      "file": "11-overview-light.png",
+      "src": "/media/aether/11-overview-light.webp",
+      "kind": "image",
+      "caption": "Overview light",
+      "width": 2560,
+      "height": 1920
+    }
+  ],
+  "Alpha Forge": [
+    {
+      "file": "01-dashboard.png",
+      "src": "/media/alpha-forge/01-dashboard.webp",
+      "kind": "image",
+      "caption": "Dashboard",
+      "width": 2348,
+      "height": 1163
+    },
+    {
+      "file": "02-decision engine.png",
+      "src": "/media/alpha-forge/02-decision-engine.webp",
+      "kind": "image",
+      "caption": "Decision engine",
+      "width": 2282,
+      "height": 1112
+    },
+    {
+      "file": "03-trade monitor.png",
+      "src": "/media/alpha-forge/03-trade-monitor.webp",
+      "kind": "image",
+      "caption": "Trade monitor",
+      "width": 2278,
+      "height": 1013
+    },
+    {
+      "file": "04-assist.png",
+      "src": "/media/alpha-forge/04-assist.webp",
+      "kind": "image",
+      "caption": "Assist",
+      "width": 1957,
+      "height": 1017
+    },
+    {
+      "file": "05-risk intel.png",
+      "src": "/media/alpha-forge/05-risk-intel.webp",
+      "kind": "image",
+      "caption": "Risk intel",
+      "width": 2185,
+      "height": 1127
+    },
+    {
+      "file": "06-risk intel2.png",
+      "src": "/media/alpha-forge/06-risk-intel2.webp",
+      "kind": "image",
+      "caption": "Risk intel2",
+      "width": 2192,
+      "height": 1123
+    },
+    {
+      "file": "07-strategy lab.png",
+      "src": "/media/alpha-forge/07-strategy-lab.webp",
+      "kind": "image",
+      "caption": "Strategy lab",
+      "width": 2283,
+      "height": 1051
+    },
+    {
+      "file": "08-strategy lab2.png",
+      "src": "/media/alpha-forge/08-strategy-lab2.webp",
+      "kind": "image",
+      "caption": "Strategy lab2",
+      "width": 1888,
+      "height": 1092
+    },
+    {
+      "file": "09-sentiment.png",
+      "src": "/media/alpha-forge/09-sentiment.webp",
+      "kind": "image",
+      "caption": "Sentiment",
+      "width": 2292,
+      "height": 1035
+    }
+  ],
+  "AURA": [
+    {
+      "file": "00.png",
+      "src": "/media/aura/00.webp",
+      "kind": "image",
+      "caption": "",
+      "width": 1454,
+      "height": 1082
+    },
+    {
+      "file": "01.png",
+      "src": "/media/aura/01.webp",
+      "kind": "image",
+      "caption": "",
+      "width": 1946,
+      "height": 1237
+    },
+    {
+      "file": "02.png",
+      "src": "/media/aura/02.webp",
+      "kind": "image",
+      "caption": "",
+      "width": 2102,
+      "height": 1229
+    },
+    {
+      "file": "03.png",
+      "src": "/media/aura/03.webp",
+      "kind": "image",
+      "caption": "",
+      "width": 2102,
+      "height": 1229
+    },
+    {
+      "file": "04.png",
+      "src": "/media/aura/04.webp",
+      "kind": "image",
+      "caption": "",
+      "width": 2102,
+      "height": 1229
+    },
+    {
+      "file": "05.png",
+      "src": "/media/aura/05.webp",
+      "kind": "image",
+      "caption": "",
+      "width": 2102,
+      "height": 1229
+    },
+    {
+      "file": "06.png",
+      "src": "/media/aura/06.webp",
+      "kind": "image",
+      "caption": "",
+      "width": 2102,
+      "height": 1229
+    },
+    {
+      "file": "07.png",
+      "src": "/media/aura/07.webp",
+      "kind": "image",
+      "caption": "",
+      "width": 2102,
+      "height": 1229
+    },
+    {
+      "file": "08.png",
+      "src": "/media/aura/08.webp",
+      "kind": "image",
+      "caption": "",
+      "width": 2102,
+      "height": 1229
+    },
+    {
+      "file": "09.png",
+      "src": "/media/aura/09.webp",
+      "kind": "image",
+      "caption": "",
+      "width": 2102,
+      "height": 1229
+    },
+    {
+      "file": "10.png",
+      "src": "/media/aura/10.webp",
+      "kind": "image",
+      "caption": "",
+      "width": 2102,
+      "height": 1229
+    },
+    {
+      "file": "11.png",
+      "src": "/media/aura/11.webp",
+      "kind": "image",
+      "caption": "",
+      "width": 2102,
+      "height": 1229
+    }
+  ],
+  "BD-Clarity": [],
+  "Evalis": [
+    {
+      "file": "00.png",
+      "src": "/media/evalis/00.webp",
+      "kind": "image",
+      "caption": "",
+      "width": 1448,
+      "height": 1086
+    },
+    {
+      "file": "01-dashboard.png",
+      "src": "/media/evalis/01-dashboard.webp",
+      "kind": "image",
+      "caption": "Dashboard",
+      "width": 2560,
+      "height": 915
+    },
+    {
+      "file": "02-Exam Sessions.png",
+      "src": "/media/evalis/02-exam-sessions.webp",
+      "kind": "image",
+      "caption": "Exam Sessions",
+      "width": 2167,
+      "height": 1196
+    },
+    {
+      "file": "03-Live Monitroing.png",
+      "src": "/media/evalis/03-live-monitroing.webp",
+      "kind": "image",
+      "caption": "Live Monitroing",
+      "width": 2252,
+      "height": 1169
+    },
+    {
+      "file": "04-New Question.png",
+      "src": "/media/evalis/04-new-question.webp",
+      "kind": "image",
+      "caption": "New Question",
+      "width": 1738,
+      "height": 1167
+    },
+    {
+      "file": "05-Result Analytics.png",
+      "src": "/media/evalis/05-result-analytics.webp",
+      "kind": "image",
+      "caption": "Result Analytics",
+      "width": 1929,
+      "height": 1095
+    },
+    {
+      "file": "06-Create New Exam.png",
+      "src": "/media/evalis/06-create-new-exam.webp",
+      "kind": "image",
+      "caption": "Create New Exam",
+      "width": 1806,
+      "height": 1164
+    },
+    {
+      "file": "07.png",
+      "src": "/media/evalis/07.webp",
+      "kind": "image",
+      "caption": "",
+      "width": 2258,
+      "height": 1229
+    }
+  ],
+  "FORME": [
+    {
+      "file": "00.png",
+      "src": "/media/forme/00.webp",
+      "kind": "image",
+      "caption": "",
+      "width": 1448,
+      "height": 1086
+    },
+    {
+      "file": "01.png",
+      "src": "/media/forme/01.webp",
+      "kind": "image",
+      "caption": "",
+      "width": 1974,
+      "height": 1218
+    },
+    {
+      "file": "02.png",
+      "src": "/media/forme/02.webp",
+      "kind": "image",
+      "caption": "",
+      "width": 2260,
+      "height": 1229
+    },
+    {
+      "file": "03.png",
+      "src": "/media/forme/03.webp",
+      "kind": "image",
+      "caption": "",
+      "width": 2260,
+      "height": 1229
+    },
+    {
+      "file": "04.png",
+      "src": "/media/forme/04.webp",
+      "kind": "image",
+      "caption": "",
+      "width": 2260,
+      "height": 1229
+    },
+    {
+      "file": "05.png",
+      "src": "/media/forme/05.webp",
+      "kind": "image",
+      "caption": "",
+      "width": 2260,
+      "height": 1229
+    },
+    {
+      "file": "06.png",
+      "src": "/media/forme/06.webp",
+      "kind": "image",
+      "caption": "",
+      "width": 2260,
+      "height": 1229
+    },
+    {
+      "file": "07.png",
+      "src": "/media/forme/07.webp",
+      "kind": "image",
+      "caption": "",
+      "width": 2260,
+      "height": 1229
+    },
+    {
+      "file": "08.png",
+      "src": "/media/forme/08.webp",
+      "kind": "image",
+      "caption": "",
+      "width": 2260,
+      "height": 1229
+    },
+    {
+      "file": "09.png",
+      "src": "/media/forme/09.webp",
+      "kind": "image",
+      "caption": "",
+      "width": 2260,
+      "height": 1229
+    },
+    {
+      "file": "10.png",
+      "src": "/media/forme/10.webp",
+      "kind": "image",
+      "caption": "",
+      "width": 2260,
+      "height": 1229
+    },
+    {
+      "file": "11.png",
+      "src": "/media/forme/11.webp",
+      "kind": "image",
+      "caption": "",
+      "width": 2260,
+      "height": 1229
+    },
+    {
+      "file": "12.png",
+      "src": "/media/forme/12.webp",
+      "kind": "image",
+      "caption": "",
+      "width": 2260,
+      "height": 1229
+    }
+  ],
+  "Fund-Clarity": [
+    {
+      "file": "image copy 2.png",
+      "src": "/media/fund-clarity/image-copy-2.webp",
+      "kind": "image",
+      "caption": "Image copy 2",
+      "width": 2267,
+      "height": 1229
+    },
+    {
+      "file": "image copy.png",
+      "src": "/media/fund-clarity/image-copy.webp",
+      "kind": "image",
+      "caption": "Image copy",
+      "width": 2267,
+      "height": 1229
+    },
+    {
+      "file": "image.png",
+      "src": "/media/fund-clarity/image.webp",
+      "kind": "image",
+      "caption": "Image",
+      "width": 2267,
+      "height": 1229
+    }
+  ],
+  "ID-Verify": [
+    {
+      "file": "00-Cover Image.png",
+      "src": "/media/id-verify/00-cover-image.webp",
+      "kind": "image",
+      "caption": "Cover Image",
+      "width": 1448,
+      "height": 1086
+    },
+    {
+      "file": "01-sign-in.png",
+      "src": "/media/id-verify/01-sign-in.webp",
+      "kind": "image",
+      "caption": "Sign in",
+      "width": 2560,
+      "height": 1920
+    },
+    {
+      "file": "02-overview.png",
+      "src": "/media/id-verify/02-overview.webp",
+      "kind": "image",
+      "caption": "Overview",
+      "width": 2560,
+      "height": 1920
+    },
+    {
+      "file": "03-verifications.png",
+      "src": "/media/id-verify/03-verifications.webp",
+      "kind": "image",
+      "caption": "Verifications",
+      "width": 2560,
+      "height": 1920
+    },
+    {
+      "file": "04-verification summary.png",
+      "src": "/media/id-verify/04-verification-summary.webp",
+      "kind": "image",
+      "caption": "Verification summary",
+      "width": 1887,
+      "height": 1186
+    },
+    {
+      "file": "05-selif-liveness.png",
+      "src": "/media/id-verify/05-selif-liveness.webp",
+      "kind": "image",
+      "caption": "Selif liveness",
+      "width": 1887,
+      "height": 1186
+    },
+    {
+      "file": "06-id card check.png",
+      "src": "/media/id-verify/06-id-card-check.webp",
+      "kind": "image",
+      "caption": "Id card check",
+      "width": 1887,
+      "height": 1186
+    },
+    {
+      "file": "07-Face Sign-in.png",
+      "src": "/media/id-verify/07-face-sign-in.webp",
+      "kind": "image",
+      "caption": "Face Sign in",
+      "width": 2203,
+      "height": 1186
+    },
+    {
+      "file": "08-document-data.png",
+      "src": "/media/id-verify/08-document-data.webp",
+      "kind": "image",
+      "caption": "Document data",
+      "width": 2560,
+      "height": 1920
+    },
+    {
+      "file": "09-Journyes.png",
+      "src": "/media/id-verify/09-journyes.webp",
+      "kind": "image",
+      "caption": "Journyes",
+      "width": 2202,
+      "height": 1336
+    },
+    {
+      "file": "11-insights.png",
+      "src": "/media/id-verify/11-insights.webp",
+      "kind": "image",
+      "caption": "Insights",
+      "width": 2560,
+      "height": 1920
+    }
+  ],
+  "Tavola": [
+    {
+      "file": "00.png",
+      "src": "/media/tavola/00.webp",
+      "kind": "image",
+      "caption": "",
+      "width": 2000,
+      "height": 1142
+    },
+    {
+      "file": "01.png",
+      "src": "/media/tavola/01.webp",
+      "kind": "image",
+      "caption": "",
+      "width": 2000,
+      "height": 1142
+    },
+    {
+      "file": "02.png",
+      "src": "/media/tavola/02.webp",
+      "kind": "image",
+      "caption": "",
+      "width": 2000,
+      "height": 1142
+    },
+    {
+      "file": "03.png",
+      "src": "/media/tavola/03.webp",
+      "kind": "image",
+      "caption": "",
+      "width": 2000,
+      "height": 1142
+    },
+    {
+      "file": "04.png",
+      "src": "/media/tavola/04.webp",
+      "kind": "image",
+      "caption": "",
+      "width": 2000,
+      "height": 1142
+    },
+    {
+      "file": "05.png",
+      "src": "/media/tavola/05.webp",
+      "kind": "image",
+      "caption": "",
+      "width": 2000,
+      "height": 1142
+    },
+    {
+      "file": "06.png",
+      "src": "/media/tavola/06.webp",
+      "kind": "image",
+      "caption": "",
+      "width": 2000,
+      "height": 1142
+    },
+    {
+      "file": "07.png",
+      "src": "/media/tavola/07.webp",
+      "kind": "image",
+      "caption": "",
+      "width": 2000,
+      "height": 1142
+    },
+    {
+      "file": "08.png",
+      "src": "/media/tavola/08.webp",
+      "kind": "image",
+      "caption": "",
+      "width": 2000,
+      "height": 1142
+    },
+    {
+      "file": "09.png",
+      "src": "/media/tavola/09.webp",
+      "kind": "image",
+      "caption": "",
+      "width": 2000,
+      "height": 1142
+    },
+    {
+      "file": "cover.png",
+      "src": "/media/tavola/cover.webp",
+      "kind": "image",
+      "caption": "Cover",
+      "width": 1448,
+      "height": 1086
+    }
+  ],
+  "TeleBook": [
+    {
+      "file": "00-login.png",
+      "src": "/media/telebook/00-login.webp",
+      "kind": "image",
+      "caption": "Login",
+      "width": 2560,
+      "height": 1920
+    },
+    {
+      "file": "01-dashboard.png",
+      "src": "/media/telebook/01-dashboard.webp",
+      "kind": "image",
+      "caption": "Dashboard",
+      "width": 2560,
+      "height": 1920
+    },
+    {
+      "file": "02-bookings.png",
+      "src": "/media/telebook/02-bookings.webp",
+      "kind": "image",
+      "caption": "Bookings",
+      "width": 2560,
+      "height": 1920
+    },
+    {
+      "file": "03-schedule.png",
+      "src": "/media/telebook/03-schedule.webp",
+      "kind": "image",
+      "caption": "Schedule",
+      "width": 2560,
+      "height": 1920
+    },
+    {
+      "file": "04-visitors.png",
+      "src": "/media/telebook/04-visitors.webp",
+      "kind": "image",
+      "caption": "Visitors",
+      "width": 2560,
+      "height": 1920
+    },
+    {
+      "file": "05-team.png",
+      "src": "/media/telebook/05-team.webp",
+      "kind": "image",
+      "caption": "Team",
+      "width": 2560,
+      "height": 1920
+    },
+    {
+      "file": "06-guest-passes.png",
+      "src": "/media/telebook/06-guest-passes.webp",
+      "kind": "image",
+      "caption": "Guest passes",
+      "width": 2560,
+      "height": 1920
+    },
+    {
+      "file": "07-incidents.png",
+      "src": "/media/telebook/07-incidents.webp",
+      "kind": "image",
+      "caption": "Incidents",
+      "width": 2560,
+      "height": 1920
+    },
+    {
+      "file": "08-live-access.png",
+      "src": "/media/telebook/08-live-access.webp",
+      "kind": "image",
+      "caption": "Live access",
+      "width": 2560,
+      "height": 1920
+    },
+    {
+      "file": "21-Employee services.png",
+      "src": "/media/telebook/21-employee-services.webp",
+      "kind": "image",
+      "caption": "Employee services",
+      "width": 1242,
+      "height": 2688
+    },
+    {
+      "file": "22-Communications.png",
+      "src": "/media/telebook/22-communications.webp",
+      "kind": "image",
+      "caption": "Communications",
+      "width": 1242,
+      "height": 2688
+    },
+    {
+      "file": "23-IT support catalogue.png",
+      "src": "/media/telebook/23-it-support-catalogue.webp",
+      "kind": "image",
+      "caption": "IT support catalogue",
+      "width": 1242,
+      "height": 2688
+    },
+    {
+      "file": "24-Notifications.png",
+      "src": "/media/telebook/24-notifications.webp",
+      "kind": "image",
+      "caption": "Notifications",
+      "width": 1242,
+      "height": 2688
+    },
+    {
+      "file": "25-Union channel.png",
+      "src": "/media/telebook/25-union-channel.webp",
+      "kind": "image",
+      "caption": "Union channel",
+      "width": 1242,
+      "height": 2688
+    },
+    {
+      "file": "mobile-1-visitor.png",
+      "src": "/media/telebook/mobile-1-visitor.webp",
+      "kind": "image",
+      "caption": "Mobile 1 visitor",
+      "width": 2560,
+      "height": 1920
+    },
+    {
+      "file": "mobile-2-team.png",
+      "src": "/media/telebook/mobile-2-team.webp",
+      "kind": "image",
+      "caption": "Mobile 2 team",
+      "width": 2560,
+      "height": 1920
+    },
+    {
+      "file": "TeleBook Enterprise Access Suite.png",
+      "src": "/media/telebook/telebook-enterprise-access-suite.webp",
+      "kind": "image",
+      "caption": "TeleBook Enterprise Access Suite",
+      "width": 1448,
+      "height": 1086
+    }
+  ]
+}

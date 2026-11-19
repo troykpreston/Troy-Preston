@@ -1,0 +1,77 @@
+/* ─────────────────────────────────────────────────────────────
+   Design tokens
+   Palette drawn from the brand image: paper, graphite, bronze, steel.
+   ───────────────────────────────────────────────────────────── */
+
+:root {
+  color-scheme: light;
+
+  --paper: #f3f1ec;
+  --paper-2: #ebe8e1;
+  --paper-3: #dfdbd2;
+  --ink: #131312;
+  --ink-2: #4b4842;
+  --ink-3: #8a867c;
+  --line: rgb(19 19 18 / 0.11);
+  --line-strong: rgb(19 19 18 / 0.24);
+  --accent: #8c6a45; /* bronze */
+  --steel: #3d5a78;
+  --live: #5d8a5a;
+  --selection: rgb(140 106 69 / 0.22);
+  --shadow-shot: 0 1px 0 rgb(255 255 255 / 0.35) inset, 0 30px 60px -20px rgb(20 18 14 / 0.35),
+    0 12px 24px -12px rgb(20 18 14 / 0.25);
+  --tone-mix: 82%;
+
+  /* Type */
+  --font-sans: var(--font-geist), ui-sans-serif, system-ui, sans-serif;
+  --font-serif: var(--font-instrument), "Times New Roman", serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, monospace;
+
+  --fs-hero: clamp(2.5rem, 6.2vw, 6.25rem);
+  --fs-display: clamp(2.25rem, 4.6vw, 4.5rem);
+  --fs-h2: clamp(1.75rem, 2.9vw, 2.75rem);
+  --fs-h3: clamp(1.25rem, 1.65vw, 1.625rem);
+  --fs-lead: clamp(1.125rem, 1.4vw, 1.375rem);
+  --fs-body: 0.9375rem;
+  --fs-text: 1rem;
+  --fs-small: 0.8125rem;
+  --fs-label: 0.65rem;
+
+  /* Space */
+  --pad-x: clamp(20px, 4vw, 56px);
+  --gutter: clamp(14px, 1.8vw, 24px);
+  --section: clamp(88px, 10vw, 152px);
+  --max: 1360px;
+  --header-h: 64px;
+  --radius: 4px;
+
+  /* Motion — mirrored in src/lib/motion.ts */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --ease-in: cubic-bezier(0.5, 0, 0.75, 0);
+  --dur-fast: 240ms;
+  --dur-base: 600ms;
+  --dur-slow: 1000ms;
+  --dur-page: 640ms;
+  --dur-morph: 760ms;
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+
+  --paper: #0e0e0d;
+  --paper-2: #161614;
+  --paper-3: #201f1c;
+  --ink: #ece9e2;
+  --ink-2: #aaa59b;
+  --ink-3: #6f6b63;
+  --line: rgb(236 233 226 / 0.1);
+  --line-strong: rgb(236 233 226 / 0.22);
+  --accent: #c9a37b;
+  --steel: #8fa9c4;
+  --live: #8dbd88;
+  --selection: rgb(201 163 123 / 0.28);
+  --shadow-shot: 0 1px 0 rgb(255 255 255 / 0.06) inset, 0 30px 70px -20px rgb(0 0 0 / 0.7),
+    0 12px 24px -12px rgb(0 0 0 / 0.5);
+  --tone-mix: 46%;
+}
