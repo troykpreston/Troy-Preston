@@ -14,18 +14,18 @@ export const site = {
   role: "Senior Software Engineer",
   url: "https://troykpreston.github.io/Troy-Preston",
   description:
-    "Troy K. Preston — Senior Software Engineer with 9+ years building scalable web, mobile and cloud-native applications across SaaS, enterprise and telecommunications.",
+    "Troy K. Preston — Senior Software Engineer with 10+ years building scalable web, mobile and cloud-native applications across SaaS, enterprise and telecommunications.",
 
   /** Hero headline. Each string is one line of the masked reveal; wrap words in *asterisks* for the italic serif accent. */
   headline: ["I turn *complex systems*", "into elegant,", "reliable software."],
 
   /** Short paragraph beside the hero headline. */
   intro:
-    "Senior Software Engineer with 9+ years building web, mobile and cloud-native systems — from data model and backend services to the interface people use every day.",
+    "Senior Software Engineer with 10+ years building web, mobile and cloud-native systems — from data model and backend services to the interface people use every day.",
 
   /** The statement that lights up word by word as you scroll. */
   statement:
-    "Nine years building scalable web, mobile and cloud-native software across SaaS, enterprise and telecommunications — modernising legacy systems, designing microservice architectures, and mentoring the teams that run them.",
+    "More than ten years building scalable web, mobile and cloud-native software across SaaS, enterprise and telecommunications — modernising legacy systems, designing microservice architectures, and mentoring the teams that run them.",
 
   location: "Richmond, Virginia" as string | null,
   timezone: "America/New_York" as string | null, // enables the live clock
@@ -88,7 +88,7 @@ export const site = {
 
   /** Short biography paragraphs for the About section. */
   bio: [
-    "Senior Software Engineer with 9+ years of experience building scalable web, mobile and cloud-native applications across SaaS, enterprise and telecommunications environments.",
+    "Senior Software Engineer with 10+ years of experience building scalable web, mobile and cloud-native applications across SaaS, enterprise and telecommunications environments.",
     "I specialise in full-stack development with TypeScript, React, Angular, Java, Spring Boot and Python on AWS and Firebase — modernising legacy systems, optimising performance, designing microservice architectures and mentoring engineering teams. I care about reliable, user-focused software, with a strong emphasis on scalability, automation, accessibility and clean engineering practice.",
   ] as string[],
 
