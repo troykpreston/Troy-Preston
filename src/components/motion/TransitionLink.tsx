@@ -4,6 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import type { ComponentProps, MouseEvent } from "react";
 import { scrollToTarget } from "./SmoothScroll";
+import { basePath } from "@/lib/base-path";
 
 type Props = Omit<ComponentProps<typeof Link>, "href"> & { href: string };
 
@@ -17,10 +18,13 @@ const depth = (path: string) => path.split("/").filter(Boolean).length;
  *   deeper  → "nav-forward"   shallower → "nav-back"   same depth → "nav-lateral"
  * Same-page anchors scroll smoothly instead of navigating.
  */
+/** "/work/" and "/work" are the same page (the export uses trailing slashes). */
+const trimSlash = (p: string) => (p.length > 1 ? p.replace(/\/+$/, "") : p);
+
 export function TransitionLink({ href, onClick, ...rest }: Props) {
-  const pathname = usePathname();
+  const pathname = trimSlash(usePathname());
   const [beforeHash, hash] = href.split("#");
-  const target = beforeHash.split("?")[0] || pathname;
+  const target = trimSlash(beforeHash.split("?")[0]) || pathname;
   const samePage = target === pathname;
 
   let transitionTypes: string[] | undefined;
@@ -35,7 +39,7 @@ export function TransitionLink({ href, onClick, ...rest }: Props) {
     if (samePage) {
       e.preventDefault();
       scrollToTarget(hash ? `#${hash}` : 0);
-      history.replaceState(null, "", hash ? `#${hash}` : pathname);
+      history.replaceState(null, "", hash ? `#${hash}` : `${basePath}${pathname}${pathname === "/" ? "" : "/"}`);
     }
   };
 

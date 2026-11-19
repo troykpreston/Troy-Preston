@@ -1,4 +1,5 @@
 import manifest from "@/content/media.generated.json";
+import { withBase } from "@/lib/base-path";
 import { projects, type Project } from "@/content/projects";
 
 export type Media = {
@@ -10,7 +11,12 @@ export type Media = {
   height?: number;
 };
 
-const all = manifest as unknown as Record<string, Media[]>;
+const all: Record<string, Media[]> = Object.fromEntries(
+  Object.entries(manifest as unknown as Record<string, Media[]>).map(([dir, list]) => [
+    dir,
+    list.map((m) => ({ ...m, src: withBase(m.src) })),
+  ]),
+);
 
 /** Cover composites (00*, cover*) and raw OS screenshots stay out of the screen gallery. */
 const NOT_A_SCREEN = /^(00([-_ ].*)?|cover)\.[a-z0-9]+$|^screenshot /i;

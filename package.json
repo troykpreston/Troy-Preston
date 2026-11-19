@@ -9,6 +9,7 @@
     "dev": "next dev --webpack",
     "prebuild": "node scripts/sync-assets.mjs",
     "build": "next build --webpack",
+    "postbuild": "node scripts/flatten-export.mjs",
     "start": "next start",
     "typecheck": "tsc --noEmit"
   },

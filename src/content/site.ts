@@ -1,4 +1,5 @@
 import media from "@/content/media.generated.json";
+import { withBase } from "@/lib/base-path";
 /**
  * Global site identity. Everything personal lives here.
  * Source: _assets/Resume.docx (software-engineering sections).
@@ -11,7 +12,7 @@ export const site = {
   /** Shown in the header wordmark. */
   wordmark: "Troy Preston",
   role: "Senior Software Engineer",
-  url: "https://example.com", // TODO: production domain
+  url: "https://troykpreston.github.io/Troy-Preston",
   description:
     "Troy K. Preston — Senior Software Engineer with 9+ years building scalable web, mobile and cloud-native applications across SaaS, enterprise and telecommunications.",
 
@@ -92,7 +93,7 @@ export const site = {
   ] as string[],
 
   /** Portrait — _assets/Profile.png, resolved through the asset manifest (filenames are fingerprinted). */
-  portrait: (media.__brand.find((m) => m.file === "Profile.png")?.src ?? null) as string | null,
+  portrait: ((src) => (src ? withBase(src) : null))(media.__brand.find((m) => m.file === "Profile.png")?.src) as string | null,
 };
 
 /** Areas of practice. `evidence` links to project slugs so every claim points at real work. */
