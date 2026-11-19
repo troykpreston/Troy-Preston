@@ -4,7 +4,7 @@ import type { ReactNode } from "react";
 import { Header } from "@/components/layout/Header";
 import { themeScript } from "@/components/layout/ThemeToggle";
 import { Providers } from "@/components/motion/SmoothScroll";
-import { site } from "@/content/site";
+import { linkedin, site } from "@/content/site";
 
 import "lenis/dist/lenis.css";
 import "@/styles/tokens.css";
@@ -45,6 +45,21 @@ export default function RootLayout({ children }: { children: ReactNode }) {
     <html lang="en" className={`${sans.variable} ${mono.variable} ${serif.variable}`} suppressHydrationWarning>
       <head>
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Person",
+              name: site.name,
+              jobTitle: site.role,
+              email: `mailto:${site.email}`,
+              address: { "@type": "PostalAddress", addressLocality: "Richmond", addressRegion: "VA", addressCountry: "US" },
+              url: site.url,
+              sameAs: [linkedin],
+            }),
+          }}
+        />
       </head>
       <body>
         <a href="#main" className="skip">

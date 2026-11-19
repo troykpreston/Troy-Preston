@@ -4,7 +4,8 @@
  *   _assets/<Project Folder>/<file>.png  ->  public/media/<project-folder>/<file>.webp
  *   _assets/<file>.png (root files)       ->  public/media/brand/<file>.webp
  *
- * Images are resized to at most 2560px wide and saved as high-quality WebP;
+ * Images are resized to at most 2560px wide and saved as high-quality WebP,
+ * with a content fingerprint in the filename (e.g. overview-1a2b3c4d.webp);
  * videos under 12 MB are copied as-is. A manifest with dimensions is written
  * to src/content/media.generated.json for next/image.
  *
@@ -14,6 +15,7 @@
  *
  * Run `npm run assets` after adding files (it also runs before `dev` and `build`).
  */
+import crypto from "node:crypto";
 import fs from "node:fs";
 import path from "node:path";
 import sharp from "sharp";
@@ -48,7 +50,8 @@ const caption = (file) => {
   return base ? base.charAt(0).toUpperCase() + base.slice(1) : "";
 };
 
-const fresh = (from, to) => fs.existsSync(to) && fs.statSync(to).mtimeMs >= fs.statSync(from).mtimeMs;
+/** Short content fingerprint — a changed source gets a new URL, so no cache can serve a stale copy. */
+const fingerprint = (file) => crypto.createHash("sha1").update(fs.readFileSync(file)).digest("hex").slice(0, 8);
 
 const written = new Set();
 let converted = 0;
@@ -59,12 +62,12 @@ async function collect(dir, outSlug) {
   for (const file of files) {
     const full = path.join(dir, file);
     if (!fs.statSync(full).isFile()) continue;
-    const base = slugify(file.replace(/\.[^.]+$/, ""));
+    const base = `${slugify(file.replace(/\.[^.]+$/, ""))}-${fingerprint(full)}`;
 
     if (IMAGE.test(file)) {
       const dest = path.join(OUT, outSlug, `${base}.webp`);
       fs.mkdirSync(path.dirname(dest), { recursive: true });
-      if (!fresh(full, dest)) {
+      if (!fs.existsSync(dest)) {
         await sharp(full)
           .resize({ width: MAX_WIDTH, withoutEnlargement: true })
           .webp({ quality: QUALITY, effort: 5, smartSubsample: true })
@@ -80,7 +83,7 @@ async function collect(dir, outSlug) {
       const ext = path.extname(file).toLowerCase();
       const dest = path.join(OUT, outSlug, `${base}${ext}`);
       fs.mkdirSync(path.dirname(dest), { recursive: true });
-      if (!fresh(full, dest)) {
+      if (!fs.existsSync(dest)) {
         fs.copyFileSync(full, dest);
         converted++;
       }

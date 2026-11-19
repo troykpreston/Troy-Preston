@@ -3,6 +3,8 @@
  * Source: _assets/Resume.docx (software-engineering sections).
  * Fields set to `null` are hidden or rendered as a quiet placeholder.
  */
+export const linkedin = "https://www.linkedin.com/in/troy-k-preston-0b9b05114/";
+
 export const site = {
   name: "Troy K. Preston",
   /** Shown in the header wordmark. */
@@ -30,7 +32,7 @@ export const site = {
   email: "keithpreston1@gmail.com",
   phone: "(804) 304-1890" as string | null,
   socials: [
-    { label: "LinkedIn", href: "https://www.linkedin.com/in/troy-k-preston-0b9b05114" as string | null },
+    { label: "LinkedIn", href: "https://www.linkedin.com/in/troy-k-preston-0b9b05114/" as string | null },
     { label: "GitHub", href: null as string | null },
   ],
 

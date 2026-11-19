@@ -1,6 +1,6 @@
 import { Lines, Reveal, Rule } from "@/components/motion/Reveal";
 import { TransitionLink } from "@/components/motion/TransitionLink";
-import { site } from "@/content/site";
+import { linkedin, site } from "@/content/site";
 import { Clock } from "./Clock";
 
 export function Footer() {
@@ -25,11 +25,23 @@ export function Footer() {
           lines={["Have a complex system", "that deserves *care?*"]}
         />
 
-        <Reveal delay={0.2}>
+        <Reveal delay={0.2} className="ftr__reach">
           <a className="ftr__mail" href={`mailto:${site.email}`}>
-            <span className="u">{site.email}</span>
-            <span className="arrow" aria-hidden>
-              →
+            <span className="label">Email</span>
+            <span className="ftr__mail-line">
+              <span className="u">{site.email}</span>
+              <span className="arrow" aria-hidden>
+                →
+              </span>
+            </span>
+          </a>
+          <a className="ftr__mail" href={linkedin} target="_blank" rel="noreferrer">
+            <span className="label">LinkedIn</span>
+            <span className="ftr__mail-line">
+              <span className="u">Troy K. Preston</span>
+              <span className="arrow ftr__ext" aria-hidden>
+                ↗
+              </span>
             </span>
           </a>
         </Reveal>

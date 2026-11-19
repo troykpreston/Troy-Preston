@@ -5,7 +5,7 @@ import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { TransitionLink } from "@/components/motion/TransitionLink";
 import { lenisStore } from "@/components/motion/SmoothScroll";
-import { site } from "@/content/site";
+import { linkedin, site } from "@/content/site";
 import { duration, ease, spring, stagger } from "@/lib/motion";
 import { ThemeToggle } from "./ThemeToggle";
 
@@ -126,6 +126,9 @@ export function Header() {
             >
               <a href={`mailto:${site.email}`} className="u">
                 {site.email}
+              </a>
+              <a href={linkedin} target="_blank" rel="noreferrer" className="u">
+                LinkedIn ↗
               </a>
               {site.availability && (
                 <span className="label menu__status">
