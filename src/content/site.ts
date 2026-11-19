@@ -1,3 +1,4 @@
+import media from "@/content/media.generated.json";
 /**
  * Global site identity. Everything personal lives here.
  * Source: _assets/Resume.docx (software-engineering sections).
@@ -90,8 +91,8 @@ export const site = {
     "I specialise in full-stack development with TypeScript, React, Angular, Java, Spring Boot and Python on AWS and Firebase — modernising legacy systems, optimising performance, designing microservice architectures and mentoring engineering teams. I care about reliable, user-focused software, with a strong emphasis on scalability, automation, accessibility and clean engineering practice.",
   ] as string[],
 
-  /** Portrait (copied from _assets/Profile.png by the asset sync). */
-  portrait: "/media/brand/profile.webp" as string | null,
+  /** Portrait — _assets/Profile.png, resolved through the asset manifest (filenames are fingerprinted). */
+  portrait: (media.__brand.find((m) => m.file === "Profile.png")?.src ?? null) as string | null,
 };
 
 /** Areas of practice. `evidence` links to project slugs so every claim points at real work. */
