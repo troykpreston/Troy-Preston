@@ -31,7 +31,7 @@ export const site = {
   timezone: "America/New_York" as string | null, // enables the live clock
   availability: "Open to select engagements" as string | null,
 
-  email: "keithpreston1@gmail.com",
+  email: "keithpreston2026@gmail.com",
   phone: "(804) 304-1890" as string | null,
   socials: [
     { label: "LinkedIn", href: "https://www.linkedin.com/in/troy-k-preston-0b9b05114/" as string | null },

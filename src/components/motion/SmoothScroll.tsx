@@ -3,7 +3,7 @@
 import Lenis from "lenis";
 import { MotionConfig } from "motion/react";
 import { usePathname } from "next/navigation";
-import { useEffect, type ReactNode } from "react";
+import { useEffect, useLayoutEffect, type ReactNode } from "react";
 
 /** Shared handle so other components can pause or drive the scroller. */
 export const lenisStore: { current: Lenis | null } = { current: null };
@@ -32,6 +32,14 @@ export function Providers({ children }: { children: ReactNode }) {
       lenisStore.current = null;
     };
   }, []);
+
+  // New page → start at the top (Lenis otherwise keeps the old scroll position).
+  // Anchor links (/#about) are left alone so they can scroll to their section.
+  useLayoutEffect(() => {
+    if (window.location.hash) return;
+    lenisStore.current?.scrollTo(0, { immediate: true, force: true });
+    window.scrollTo(0, 0);
+  }, [pathname]);
 
   // Page height changes on navigation; let Lenis re-measure.
   useEffect(() => {
