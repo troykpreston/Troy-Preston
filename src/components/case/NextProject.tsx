@@ -12,7 +12,7 @@ export function NextProject({ project }: { project: Project }) {
       <TransitionLink href={`/work/${project.slug}`} className="next__link">
         <div className="next__text">
           <span className="label">Next case</span>
-          <Lines as="h2" lines={[project.name]} className="next__name serif" />
+          <Lines as="h2" lines={[project.name]} className="next__name" />
           <p className="muted next__tag">{project.tagline}</p>
           <span className="next__cta label">
             Continue <span className="arrow">→</span>

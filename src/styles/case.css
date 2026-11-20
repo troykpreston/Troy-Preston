@@ -627,7 +627,7 @@ html.lb-open {
 .dg__node--interface {
   background: var(--graphite);
   border-color: var(--graphite);
-  color: #f1eee8;
+  color: var(--on-ink, #eef3fb);
 }
 .dg__node--service {
   background: color-mix(in oklab, var(--sapphire) 11%, var(--paper));
@@ -730,4 +730,97 @@ html.lb-open {
   .dg__layer[data-count="5"] .dg__node:last-child {
     flex-basis: 100%;
   }
+}
+
+/* ── Premium refinement pass ── */
+.case .case__title {
+  font-family: var(--font-head, inherit);
+  font-weight: var(--fw-head-strong, 750);
+  font-size: clamp(2.5rem, 6vw, 5.25rem);
+  letter-spacing: var(--tr-hero, -0.04em);
+  line-height: 1;
+}
+.case__back .arrow { display: inline-block; transition: transform var(--dur-base, 520ms) var(--ease-expo, var(--ease-out)); }
+.case__back:hover .arrow { transform: translateX(-4px); }
+.case__meta > div { border-top: 1px solid var(--line); padding-top: 12px; }
+.case__meta dd { font-size: var(--fs-small, 0.8125rem); color: var(--ink); }
+.case__hero .frame {
+  border-radius: var(--radius-lg, 18px);
+  overflow: hidden;
+  box-shadow: var(--elev-3, none);
+}
+.case__summary .lead {
+  font-family: var(--font-head, inherit);
+  font-weight: 600;
+  font-size: clamp(1.25rem, 2vw, 1.875rem);
+  line-height: 1.35;
+  letter-spacing: var(--tr-h3, -0.015em);
+  color: var(--ink);
+}
+.csec__title {
+  font-family: var(--font-head, inherit);
+  font-weight: 600;
+  font-size: var(--fs-h3, 1.25rem);
+  letter-spacing: var(--tr-h3, -0.015em);
+}
+.csec__aside .label:first-child { color: var(--accent); }
+.blk--text p { font-size: 1rem; line-height: 1.7; max-width: 64ch; }
+.flow__label { font-family: var(--font-head, inherit); font-weight: 600; font-size: 1.0625rem; }
+.flow__step::before { background: var(--accent); box-shadow: 0 0 0 3px var(--paper); }
+.quote { border-left: 2px solid var(--accent); }
+
+.plate__mat { border-radius: var(--radius-lg, 18px); background: color-mix(in oklab, var(--tone) var(--tone-mix, 14%), var(--paper)); }
+.gal__img, .plate__img, .pair__img {
+  border-radius: var(--radius-sm, 8px);
+  box-shadow: var(--elev-2, none);
+  overflow: hidden;
+}
+.gal__btn { cursor: zoom-in; }
+.gal__img img { transition: transform 1.1s var(--ease-expo, var(--ease-out)); }
+.gal__btn:hover .gal__img img { transform: scale(1.02); }
+.lb {
+  background: color-mix(in oklab, var(--paper) 88%, transparent);
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
+}
+.lb__img { animation: lb-in 0.4s var(--ease-expo, ease-out) both; }
+@keyframes lb-in { from { opacity: 0; transform: scale(0.96); } }
+.lb__ctrl button {
+  min-width: 36px; height: 36px; padding: 0 14px;
+  border-radius: var(--radius-pill, 999px);
+  border: 1px solid var(--card-border, var(--line));
+  background: var(--surface, transparent);
+}
+.lb__ctrl button:hover { border-color: var(--card-border-hover, var(--accent)); }
+.lb__ctrl button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+.dg { border-radius: var(--radius-lg, 18px); background: var(--surface, transparent); border: 1px solid var(--card-border, var(--line)); }
+.dg__node { border-radius: var(--radius-sm, 8px); }
+
+.next__link {
+  padding: clamp(24px, 3vw, 40px);
+  border-radius: var(--radius-lg, 18px);
+  background: var(--surface, transparent);
+  border: 1px solid var(--card-border, var(--line));
+  transition: border-color var(--dur-base, 520ms) var(--ease-out), box-shadow var(--dur-base, 520ms) var(--ease-out);
+}
+.next__link:hover { border-color: var(--card-border-hover, var(--accent)); box-shadow: var(--elev-2, none); }
+.next__link:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; border-color: var(--card-border-hover, var(--accent)); }
+.gal__btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; border-radius: var(--radius-sm, 8px); }
+.next__name {
+  font-family: var(--font-head, inherit);
+  font-weight: 700;
+  font-size: var(--fs-display, clamp(2rem, 4vw, 3.75rem));
+  letter-spacing: var(--tr-display, -0.035em);
+  line-height: var(--lh-tight, 1.02);
+  transition: transform var(--dur-base, 520ms) var(--ease-expo, var(--ease-out));
+}
+.next__link:hover .next__name { transform: translateX(8px); }
+.next__media .frame img { transition: transform 1.1s var(--ease-expo, var(--ease-out)); }
+.next__link:hover .next__media .frame img { transform: scale(1.03); }
+.next__media .frame { border-radius: var(--radius, 12px); overflow: hidden; }
+
+@media (prefers-reduced-motion: reduce) {
+  .lb__img { animation: none; }
+  .gal__img img, .next__name, .next__media .frame img, .case__back .arrow { transition: none; transform: none !important; }
 }

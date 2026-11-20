@@ -21,7 +21,7 @@ export function Footer() {
 
         <Lines
           as="h2"
-          className="ftr__title serif"
+          className="ftr__title"
           lines={["Have a complex system", "that deserves *care?*"]}
         />
 

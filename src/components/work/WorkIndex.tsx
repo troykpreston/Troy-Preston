@@ -105,7 +105,7 @@ export function WorkIndex({ items, disciplines }: { items: IndexItem[]; discipli
                 <span>Project</span>
                 <span className="rows__hide-sm">Description</span>
                 <span className="rows__hide-md">Discipline</span>
-                <span className="rows__end">Year</span>
+                <span className="rows__end" />
               </li>
               <AnimatePresence initial={false}>
                 {visible.map((p) => (
@@ -114,19 +114,19 @@ export function WorkIndex({ items, disciplines }: { items: IndexItem[]; discipli
                     layout="position"
                     className="row"
                     data-active={hovered === p.slug || undefined}
-                    initial={{ opacity: 0, y: 12 }}
+                    initial={{ opacity: 0, y: 8 }}
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, transition: { duration: 0.18 } }}
-                    transition={{ duration: duration.base, ease: ease.out }}
+                    transition={{ duration: 0.3, ease: ease.out }}
                     onPointerEnter={() => setHovered(p.slug)}
                   >
                     <TransitionLink href={`/work/${p.slug}`} className="row__link">
                       <span className="label row__num">{p.number}</span>
-                      <span className="row__name serif">{p.name}</span>
+                      <span className="row__name">{p.name}</span>
                       <span className="row__tag rows__hide-sm">{p.tagline}</span>
                       <span className="row__disc label rows__hide-md">{p.disciplines.join(" · ")}</span>
                       <span className="row__year label rows__end">
-                        {p.year ?? "—"} <span className="arrow">→</span>
+                        {p.year ? `${p.year} ` : null}<span className="arrow">→</span>
                       </span>
                     </TransitionLink>
                   </motion.li>
@@ -166,7 +166,7 @@ export function WorkIndex({ items, disciplines }: { items: IndexItem[]; discipli
                       />
                       <div className="card__info">
                         <span className="label">{p.number}</span>
-                        <h2 className="card__name serif">{p.name}</h2>
+                        <h2 className="card__name">{p.name} <span className="arrow card__arrow" aria-hidden="true">→</span></h2>
                         <p className="card__tag muted">{p.tagline}</p>
                       </div>
                     </TransitionLink>
@@ -194,10 +194,10 @@ export function WorkIndex({ items, disciplines }: { items: IndexItem[]; discipli
                 <motion.div
                   key={p.slug}
                   className="peek__item"
-                  initial={{ clipPath: "inset(100% 0 0 0)", opacity: 1 }}
-                  animate={{ clipPath: "inset(0% 0 0 0)" }}
+                  initial={{ clipPath: "inset(10% round 8px)", opacity: 0, scale: 0.92 }}
+                  animate={{ clipPath: "inset(0% round 8px)", opacity: 1, scale: 1 }}
                   exit={{ opacity: 0, transition: { duration: 0.25 } }}
-                  transition={{ duration: duration.base, ease: ease.out }}
+                  transition={{ duration: 0.45, ease: [0.19, 1, 0.22, 1] }}
                   // The hovered preview becomes the case-study hero on click.
                   style={{ viewTransitionName: morphName(p.slug), viewTransitionClass: "morph" } as CSSProperties}
                 >

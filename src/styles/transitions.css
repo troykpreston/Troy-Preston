@@ -16,8 +16,8 @@
 /* Root: the quiet default (browser back/forward, untyped navigations) */
 ::view-transition-old(root),
 ::view-transition-new(root) {
-  animation-duration: 420ms;
-  animation-timing-function: var(--ease-out);
+  animation-duration: 360ms;
+  animation-timing-function: var(--ease-out, cubic-bezier(0.16, 1, 0.3, 1));
 }
 
 /* ── Anchored header: never moves during page changes ── */
@@ -32,78 +32,60 @@
   animation: none;
 }
 
-/* ── Directional page transitions ── */
+/* ── Directional page transitions ──
+   Outgoing page dims and settles back; incoming page wipes in from an
+   inset clip with a soft focus pull. */
 
 ::view-transition-old(.nav-forward),
 ::view-transition-old(.nav-back),
 ::view-transition-old(.nav-lateral) {
-  animation: page-out 300ms var(--ease-in) both;
+  transform-origin: 50% 30vh;
+  animation: page-out var(--dur-page-out, 280ms) var(--ease-in, cubic-bezier(0.5, 0, 0.75, 0)) both;
 }
 ::view-transition-new(.nav-forward),
 ::view-transition-new(.nav-back),
 ::view-transition-new(.nav-lateral) {
-  animation: page-in var(--dur-page) var(--ease-out) 120ms both;
+  animation: page-in var(--dur-page, 720ms) var(--ease-expo, cubic-bezier(0.19, 1, 0.22, 1))
+    var(--dur-page-delay, 140ms) both;
 }
 
-::view-transition-old(.nav-forward) {
-  --from-y: 0;
-  --to-y: -20px;
-}
-::view-transition-new(.nav-forward) {
-  --from-y: 32px;
-  --to-y: 0;
-}
-::view-transition-old(.nav-back) {
-  --from-y: 0;
-  --to-y: 20px;
-}
-::view-transition-new(.nav-back) {
-  --from-y: -24px;
-  --to-y: 0;
-}
-::view-transition-old(.nav-lateral) {
-  --from-y: 0;
-  --to-y: 0;
-  --from-x: 0;
-  --to-x: -28px;
-}
-::view-transition-new(.nav-lateral) {
-  --from-y: 0;
-  --to-y: 0;
-  --from-x: 40px;
-  --to-x: 0;
-}
+::view-transition-old(.nav-forward) { --to-y: -12px; }
+::view-transition-new(.nav-forward) { --from-y: 28px; --clip-t: 6%; }
+::view-transition-old(.nav-back) { --to-y: 12px; }
+::view-transition-new(.nav-back) { --from-y: -20px; --clip-b: 6%; }
+::view-transition-old(.nav-lateral) { --to-x: -24px; }
+::view-transition-new(.nav-lateral) { --from-x: 32px; --clip-l: 4%; }
 
 @keyframes page-out {
-  from {
-    opacity: 1;
-    translate: var(--from-x, 0) var(--from-y, 0);
-    filter: blur(0);
-  }
   to {
     opacity: 0;
+    scale: 0.985;
+    filter: blur(6px);
     translate: var(--to-x, 0) var(--to-y, 0);
-    filter: blur(3px);
   }
 }
 @keyframes page-in {
   from {
     opacity: 0;
     translate: var(--from-x, 0) var(--from-y, 0);
-    filter: blur(4px);
+    filter: blur(8px);
+    clip-path: inset(var(--clip-t, 0) 0 var(--clip-b, 0) var(--clip-l, 0) round 16px);
   }
   to {
     opacity: 1;
-    translate: var(--to-x, 0) var(--to-y, 0);
+    translate: 0 0;
     filter: blur(0);
+    clip-path: inset(0 0 0 0 round 0);
   }
 }
 
 /* ── Shared-element morph (thumbnail → hero) ── */
 
 ::view-transition-group(.morph) {
-  animation-duration: var(--dur-morph);
-  animation-timing-function: cubic-bezier(0.76, 0, 0.18, 1);
+  animation-duration: var(--dur-morph, 820ms);
+  animation-timing-function: var(--ease-morph, cubic-bezier(0.7, 0, 0.15, 1));
+  border-radius: 12px;
+  overflow: hidden;
   z-index: 50;
 }
 ::view-transition-image-pair(.morph) {
@@ -116,8 +98,9 @@
   width: 100%;
   object-fit: cover;
   object-position: left top;
-  animation-duration: var(--dur-morph);
-  animation-timing-function: cubic-bezier(0.76, 0, 0.18, 1);
+  animation-duration: var(--dur-morph, 820ms);
+  animation-timing-function: linear;
+  animation-fill-mode: both;
 }
 ::view-transition-old(.morph) {
   animation-name: morph-out;
@@ -126,14 +109,12 @@
   animation-name: morph-in;
 }
 @keyframes morph-out {
-  to {
-    opacity: 0;
-  }
+  0% { opacity: 1; }
+  45%, 100% { opacity: 0; }
 }
 @keyframes morph-in {
-  from {
-    opacity: 0;
-  }
+  0% { opacity: 0; }
+  35%, 100% { opacity: 1; }
 }
 
 /* ── Theme switch: circular reveal from the toggle ── */
@@ -142,7 +123,8 @@ html.theme-vt::view-transition-old(root) {
   animation: none;
 }
 html.theme-vt::view-transition-new(root) {
-  animation: theme-reveal 900ms var(--ease-in-out) both;
+  animation: theme-reveal 820ms var(--ease-expo, cubic-bezier(0.19, 1, 0.22, 1)) both;
+  will-change: auto;
 }
 html.theme-vt::view-transition-group(site-header) {
   animation: none;
@@ -156,12 +138,21 @@ html.theme-vt::view-transition-group(site-header) {
   }
 }
 
-/* ── Reduced motion: keep fades, drop movement ── */
+/* ── Reduced motion: a plain, short crossfade. No clip, blur or movement. ── */
 @media (prefers-reduced-motion: reduce) {
-  ::view-transition-group(*),
-  ::view-transition-old(*),
-  ::view-transition-new(*) {
+  ::view-transition-group(*) {
     animation-duration: 0s !important;
-    animation-delay: 0s !important;
   }
+  ::view-transition-old(*) {
+    animation: vt-fade-out 160ms linear both !important;
+  }
+  ::view-transition-new(*) {
+    animation: vt-fade-in 160ms linear both !important;
+  }
+}
+@keyframes vt-fade-out {
+  to { opacity: 0; }
+}
+@keyframes vt-fade-in {
+  from { opacity: 0; }
 }

@@ -52,7 +52,7 @@ export function SelectedWork() {
                 />
                 <Reveal className="feat__info" y={16}>
                   <span className="label feat__num">{pad(number)}</span>
-                  <h3 className="feat__name serif">{p.name}</h3>
+                  <h3 className="feat__name">{p.name}</h3>
                   <p className="feat__tag">{p.tagline}</p>
                   <ul className="feat__disc">
                     {p.disciplines.map((d) => (

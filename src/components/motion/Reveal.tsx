@@ -29,8 +29,8 @@ export function Lines({ lines, as = "h2", className, delay = 0, trigger = "view"
       {lines.map((line, i) => (
         <span className="line" key={i}>
           <motion.span
-            variants={{ hidden: { y: "108%" }, shown: { y: "0%" } }}
-            transition={{ duration: duration.slower, ease: ease.out, delay: delay + i * stagger.loose }}
+            variants={{ hidden: { y: "110%" }, shown: { y: "0%" } }}
+            transition={{ duration: duration.slower, ease: ease.expo, delay: delay + i * stagger.loose }}
           >
             {withEm(line)}
           </motion.span>
@@ -50,17 +50,17 @@ type RevealProps = {
 };
 
 /** Fade + rise. The workhorse for secondary content. */
-export function Reveal({ children, className, delay = 0, y = 16, as = "div", trigger = "view" }: RevealProps) {
+export function Reveal({ children, className, delay = 0, y = 14, as = "div", trigger = "view" }: RevealProps) {
   const reduce = useReducedMotion();
   const Tag = motion[as];
-  const shown = { opacity: 1, y: 0 };
+  const shown = reduce ? { opacity: 1 } : { opacity: 1, y: 0, filter: "blur(0px)" };
   const play = trigger === "mount" ? { animate: shown } : { whileInView: shown, viewport: inView };
   return (
     <Tag
       className={className}
-      initial={{ opacity: 0, y: reduce ? 0 : y }}
+      initial={reduce ? { opacity: 0 } : { opacity: 0, y, filter: "blur(6px)" }}
       {...play}
-      transition={{ duration: duration.slow, ease: ease.out, delay }}
+      transition={reduce ? { duration: 0.3, ease: "linear", delay } : { duration: duration.slow, ease: ease.expo, delay }}
     >
       {children}
     </Tag>
@@ -75,7 +75,7 @@ export function Rule({ delay = 0, className = "" }: { delay?: number; className?
       initial={{ scaleX: 0 }}
       whileInView={{ scaleX: 1 }}
       viewport={inView}
-      transition={{ duration: duration.slower, ease: ease.out, delay }}
+      transition={{ duration: duration.slower, ease: ease.expo, delay }}
     />
   );
 }

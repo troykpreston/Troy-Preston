@@ -6,23 +6,28 @@
 export const ease = {
   /** Long, confident deceleration. Default for reveals. */
   out: [0.16, 1, 0.3, 1] as const,
+  /** Expo deceleration: reveals, page entrances. */
+  expo: [0.19, 1, 0.22, 1] as const,
   /** Symmetric, for things that move from A to B. */
   inOut: [0.65, 0, 0.35, 1] as const,
   /** Quick exit. */
   in: [0.5, 0, 0.75, 0] as const,
+  /** Shared-element morph. */
+  morph: [0.7, 0, 0.15, 1] as const,
 };
 
 export const duration = {
+  micro: 0.16,
   fast: 0.24,
-  base: 0.55,
-  slow: 0.85,
+  base: 0.52,
+  slow: 0.9,
   slower: 1.1,
 };
 
 export const stagger = {
-  tight: 0.04,
-  base: 0.08,
-  loose: 0.1,
+  tight: 0.035,
+  base: 0.07,
+  loose: 0.09,
 };
 
 export const spring = {

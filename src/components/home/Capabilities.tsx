@@ -12,7 +12,7 @@ export function Capabilities() {
         {capabilities.map((c, i) => (
           <Reveal as="li" key={c.title} className="cap" delay={i * 0.04} y={18}>
             <span className="label cap__num">{pad(i + 1)}</span>
-            <h3 className="cap__title serif">{c.title}</h3>
+            <h3 className="cap__title">{c.title}</h3>
             <p className="cap__body">{c.body}</p>
             <div className="cap__evidence">
               <span className="label">Seen in</span>

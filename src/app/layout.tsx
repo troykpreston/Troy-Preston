@@ -19,7 +19,7 @@ const sans = Geist({ subsets: ["latin"], variable: "--font-geist", display: "swa
 const mono = Geist_Mono({ subsets: ["latin"], variable: "--font-geist-mono", display: "swap" });
 const display = Plus_Jakarta_Sans({
   subsets: ["latin"],
-  weight: ["600", "700", "800"],
+  weight: ["500", "600", "700", "800"],
   variable: "--font-jakarta",
   display: "swap",
 });
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
 export const viewport: Viewport = {
   themeColor: [
     { media: "(prefers-color-scheme: light)", color: "#f4f7fa" },
-    { media: "(prefers-color-scheme: dark)", color: "#04080e" },
+    { media: "(prefers-color-scheme: dark)", color: "#05090f" },
   ],
 };
 

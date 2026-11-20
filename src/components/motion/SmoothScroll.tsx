@@ -11,7 +11,7 @@ export const lenisStore: { current: Lenis | null } = { current: null };
 export function scrollToTarget(target: string | number) {
   const lenis = lenisStore.current;
   if (lenis) {
-    lenis.scrollTo(target, { duration: 1.4, easing: (t) => 1 - Math.pow(1 - t, 4), offset: 0 });
+    lenis.scrollTo(target, { duration: 1.2, easing: (t) => (t === 1 ? 1 : 1 - Math.pow(2, -10 * t)), offset: 0 });
     return;
   }
   if (typeof target === "number") window.scrollTo({ top: target, behavior: "smooth" });
@@ -25,7 +25,7 @@ export function Providers({ children }: { children: ReactNode }) {
     const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     if (reduced) return;
     // Lenis leaves touch scrolling native by default — only wheel/trackpad is smoothed.
-    const lenis = new Lenis({ autoRaf: true, lerp: 0.095, wheelMultiplier: 0.95 });
+    const lenis = new Lenis({ autoRaf: true, lerp: 0.1, wheelMultiplier: 0.9 });
     lenisStore.current = lenis;
     return () => {
       lenis.destroy();

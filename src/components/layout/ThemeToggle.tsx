@@ -1,8 +1,6 @@
 "use client";
 
-import { motion } from "motion/react";
 import { useEffect, useState, type MouseEvent } from "react";
-import { spring } from "@/lib/motion";
 
 type Theme = "light" | "dark";
 
@@ -51,14 +49,7 @@ export function ThemeToggle() {
     >
       <svg viewBox="0 0 20 20" width="18" height="18" aria-hidden>
         <circle cx="10" cy="10" r="7.25" fill="none" stroke="currentColor" strokeWidth="1.1" />
-        <motion.path
-          d="M10 2.75a7.25 7.25 0 0 1 0 14.5z"
-          fill="currentColor"
-          initial={false}
-          animate={{ rotate: theme === "dark" ? 180 : 0 }}
-          style={{ originX: "10px", originY: "10px", transformBox: "view-box" }}
-          transition={spring.ui}
-        />
+        <path d="M10 2.75a7.25 7.25 0 0 1 0 14.5z" fill="currentColor" />
       </svg>
     </button>
   );

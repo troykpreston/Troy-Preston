@@ -80,7 +80,7 @@ export function Showcase({ items }: { items: ShowcaseItem[] }) {
               transition={{ duration: 0.4, ease: ease.out }}
             >
               <span className="label">{item.category}</span>
-              <span className="show__name serif">{item.name}</span>
+              <span className="show__name">{item.name}</span>
             </motion.div>
           </AnimatePresence>
         </div>

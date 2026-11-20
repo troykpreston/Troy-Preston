@@ -110,7 +110,7 @@ export function Header() {
                     exit={{ y: "-110%" }}
                     transition={{ duration: duration.base + 0.2, ease: ease.out, delay: 0.18 + i * stagger.base }}
                   >
-                    <TransitionLink href={item.href} className="menu__link serif" onClick={() => setOpen(false)}>
+                    <TransitionLink href={item.href} className="menu__link" onClick={() => setOpen(false)}>
                       <span className="label">0{i + 1}</span>
                       {item.label}
                     </TransitionLink>

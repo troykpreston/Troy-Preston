@@ -30,7 +30,7 @@ export function Hero({ projectCount }: { projectCount: number }) {
           <Reveal trigger="mount" delay={0.55} className="hero__intro">
             <p>{site.intro}</p>
             <div className="hero__links">
-              <TransitionLink href="/work" className="hero__cta hero__cta--primary">
+              <TransitionLink href="/work" className="btn btn--primary hero__cta hero__cta--primary">
                 <span>View selected work</span> <span className="arrow">→</span>
               </TransitionLink>
               <a href={linkedin} target="_blank" rel="noreferrer" className="hero__cta hero__cta--quiet">

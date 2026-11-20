@@ -27,7 +27,7 @@ export function Statement({ text, label }: { text: string; label: string }) {
 }
 
 function Word({ children, progress, range }: { children: string; progress: MotionValue<number>; range: [number, number] }) {
-  const opacity = useTransform(progress, range, [0.14, 1]);
+  const opacity = useTransform(progress, range, [0.25, 1]);
   return (
     <>
       <motion.span style={{ opacity }}>{children}</motion.span>{" "}
