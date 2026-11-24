@@ -24,7 +24,7 @@ export function Hero({ projectCount }: { projectCount: number }) {
         <div className="hero__copy">
           <Reveal trigger="mount" delay={0.1} y={0} className="hero__eyebrow">
             <span className="hero__eyebrow-rule" aria-hidden />
-            <span className="label">Senior Software Engineer · 10+ years</span>
+            <span className="label">Senior Software Engineer · 6+ years</span>
           </Reveal>
           <Lines as="h1" lines={site.headline} className="hero__title" trigger="mount" delay={0.15} />
           <Reveal trigger="mount" delay={0.55} className="hero__intro">

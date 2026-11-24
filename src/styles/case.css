@@ -783,8 +783,6 @@ html.lb-open {
   -webkit-backdrop-filter: blur(20px);
   backdrop-filter: blur(20px);
 }
-.lb__img { animation: lb-in 0.4s var(--ease-expo, ease-out) both; }
-@keyframes lb-in { from { opacity: 0; transform: scale(0.96); } }
 .lb__ctrl button {
   min-width: 36px; height: 36px; padding: 0 14px;
   border-radius: var(--radius-pill, 999px);
@@ -821,6 +819,47 @@ html.lb-open {
 .next__media .frame { border-radius: var(--radius, 12px); overflow: hidden; }
 
 @media (prefers-reduced-motion: reduce) {
-  .lb__img { animation: none; }
   .gal__img img, .next__name, .next__media .frame img, .case__back .arrow { transition: none; transform: none !important; }
+}
+
+/* Plate and pair screenshots open the lightbox too. */
+.plate .gal__btn,
+.pair .gal__btn {
+  padding: 0;
+  background: none;
+}
+.plate__img img,
+.pair__img img {
+  transition: transform 1.1s var(--ease-expo, var(--ease-out));
+}
+.gal__btn:hover .plate__img img,
+.gal__btn:hover .pair__img img {
+  transform: scale(1.02);
+}
+@media (prefers-reduced-motion: reduce) {
+  .gal__btn:hover .plate__img img,
+  .gal__btn:hover .pair__img img,
+  .gal__btn:hover .gal__img img {
+    transform: none;
+  }
+}
+
+/* Press feedback: the thumbnail settles in slightly under the pointer. */
+.gal__btn {
+  -webkit-tap-highlight-color: transparent;
+  transition: transform 0.5s var(--ease-expo, var(--ease-out));
+}
+.gal__btn:active {
+  transform: scale(0.985);
+  transition-duration: 0.12s;
+}
+.gal__btn:focus:not(:focus-visible) {
+  outline: none;
+}
+@media (prefers-reduced-motion: reduce) {
+  .gal__btn,
+  .gal__btn:active {
+    transition: none;
+    transform: none;
+  }
 }

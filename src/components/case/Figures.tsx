@@ -1,23 +1,19 @@
-import Image from "next/image";
 import type { CSSProperties } from "react";
 import { Reveal } from "@/components/motion/Reveal";
-import type { Shot } from "./Gallery";
+import { ZoomImage, type Shot } from "./Lightbox";
 
-/** One screenshot on the project's tone — sits between narrative sections. */
-export function Plate({ shot, name, tone, fig }: { shot: Shot; name: string; tone: string; fig: string }) {
+/** One screenshot on the project's tone — sits between narrative sections. Click to enlarge. */
+export function Plate({ shot, index, name, tone, fig }: { shot: Shot; index: number; name: string; tone: string; fig: string }) {
   return (
     <Reveal as="figure" className="plate" y={40}>
       <div className="plate__mat" style={{ "--tone": tone } as CSSProperties}>
-        <div className="plate__img">
-          <Image
-            src={shot.src}
-            alt={shot.caption ? `${name} — ${shot.caption}` : `${name} — interface`}
-            width={shot.width}
-            height={shot.height}
-            sizes="(max-width: 1680px) 90vw, 1400px"
-            quality={90}
-          />
-        </div>
+        <ZoomImage
+          shot={shot}
+          index={index}
+          className="plate__img"
+          alt={shot.caption ? `${name} — ${shot.caption}` : `${name} — interface`}
+          sizes="(max-width: 1680px) 90vw, 1400px"
+        />
       </div>
       <figcaption className="gal__cap">
         <span className="label">Fig. {fig}</span>
@@ -27,22 +23,19 @@ export function Plate({ shot, name, tone, fig }: { shot: Shot; name: string; ton
   );
 }
 
-/** Two screenshots side by side, offset for rhythm. */
-export function Pair({ shots, name, figs }: { shots: Shot[]; name: string; figs: string[] }) {
+/** Two screenshots side by side, offset for rhythm. Click to enlarge. */
+export function Pair({ shots, start, name, figs }: { shots: Shot[]; start: number; name: string; figs: string[] }) {
   return (
     <div className="pair">
       {shots.map((s, i) => (
         <Reveal as="figure" key={s.src} className="pair__item" delay={i * 0.08} y={40}>
-          <div className="pair__img">
-            <Image
-              src={s.src}
-              alt={s.caption ? `${name} — ${s.caption}` : `${name} — interface`}
-              width={s.width}
-              height={s.height}
-              sizes="(max-width: 900px) 100vw, 45vw"
-              quality={90}
-            />
-          </div>
+          <ZoomImage
+            shot={s}
+            index={start + i}
+            className="pair__img"
+            alt={s.caption ? `${name} — ${s.caption}` : `${name} — interface`}
+            sizes="(max-width: 900px) 100vw, 45vw"
+          />
           <figcaption className="gal__cap">
             <span className="label">Fig. {figs[i]}</span>
             <span>{s.caption}</span>

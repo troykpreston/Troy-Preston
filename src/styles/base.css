@@ -248,9 +248,9 @@ h3 .em,
   margin-bottom: -0.08em;
   padding-right: 0.06em;
 }
+/* No permanent will-change: it rasterises the settled heading and softens it. */
 .line > span {
   display: block;
-  will-change: transform;
 }
 
 /* Underline that draws on hover */

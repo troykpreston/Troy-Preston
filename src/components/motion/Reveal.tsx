@@ -53,7 +53,9 @@ type RevealProps = {
 export function Reveal({ children, className, delay = 0, y = 14, as = "div", trigger = "view" }: RevealProps) {
   const reduce = useReducedMotion();
   const Tag = motion[as];
-  const shown = reduce ? { opacity: 1 } : { opacity: 1, y: 0, filter: "blur(0px)" };
+  // transitionEnd drops the filter once settled — a lingering blur(0px) keeps
+  // the text on its own compositor layer and Chrome renders it soft.
+  const shown = reduce ? { opacity: 1 } : { opacity: 1, y: 0, filter: "blur(0px)", transitionEnd: { filter: "none" } };
   const play = trigger === "mount" ? { animate: shown } : { whileInView: shown, viewport: inView };
   return (
     <Tag
