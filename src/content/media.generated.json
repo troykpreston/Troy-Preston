@@ -568,7 +568,7 @@
   "ID-Verify": [
     {
       "file": "00-Cover Image.png",
-      "src": "/media/id-verify/00-cover-image-117d44b9.webp",
+      "src": "/media/id-verify/00-cover-image-89b012dc.webp",
       "kind": "image",
       "caption": "Cover Image",
       "width": 1448,
@@ -600,7 +600,7 @@
     },
     {
       "file": "04-verification summary.png",
-      "src": "/media/id-verify/04-verification-summary-59fcdf1f.webp",
+      "src": "/media/id-verify/04-verification-summary-e8451fe2.webp",
       "kind": "image",
       "caption": "Verification summary",
       "width": 1887,
@@ -608,7 +608,7 @@
     },
     {
       "file": "05-selif-liveness.png",
-      "src": "/media/id-verify/05-selif-liveness-60302cec.webp",
+      "src": "/media/id-verify/05-selif-liveness-933250bb.webp",
       "kind": "image",
       "caption": "Selif liveness",
       "width": 1887,
@@ -616,7 +616,7 @@
     },
     {
       "file": "06-id card check.png",
-      "src": "/media/id-verify/06-id-card-check-7147e785.webp",
+      "src": "/media/id-verify/06-id-card-check-98a7e82b.webp",
       "kind": "image",
       "caption": "Id card check",
       "width": 1887,
