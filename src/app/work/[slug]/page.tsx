@@ -148,6 +148,7 @@ export default async function CasePage({ params }: PageProps<"/work/[slug]">) {
               <div className="case__lede">
                 <Reveal trigger="mount" delay={0.35}>
                   <p className="lead">{project.tagline}</p>
+                {project.credit && <p className="credit">{project.credit}</p>}
                 </Reveal>
                 {project.stack?.length ? (
                   <Reveal trigger="mount" delay={0.45} className="case__stack">

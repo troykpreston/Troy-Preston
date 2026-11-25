@@ -18,6 +18,7 @@ export default function WorkPage() {
       number: pad(i + 1),
       name: p.name,
       tagline: p.tagline,
+      credit: p.credit ?? null,
       disciplines: p.disciplines,
       year: p.year,
       tone: p.tone,

@@ -10,7 +10,7 @@ import { site } from "@/content/site";
 export default function Home() {
   return (
     <Page>
-      <Hero projectCount={projects.length} />
+      <Hero projectCount={projects.filter((p) => p.featured).length} />
       <Statement text={site.statement} label="Approach" />
       <SelectedWork />
       <Capabilities />

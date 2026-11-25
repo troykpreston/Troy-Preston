@@ -32,6 +32,8 @@ export type Project = {
   category: string;
   /** One-line description, shown in lists and under the title. */
   tagline: string;
+  /** Optional engagement note shown under the tagline, e.g. an NDA credit. */
+  credit?: string;
   disciplines: string[];
   role: string | null;
   system: string | null;
@@ -61,38 +63,31 @@ export type Project = {
 const text = (body: string): Block => ({ type: "text", body });
 
 export const projects: Project[] = [
-  /* ── Part I — Flagship enterprise projects ─────────────────────────── */
   {
-    slug: "fund-clarity",
-    name: "Fund Clarity",
-    tone: "#d6dbd2",
-    category: "Enterprise Financial Reporting",
-    tagline: "Enterprise financial reporting, built around data integrity and precise calculation logic.",
-    disciplines: ["Enterprise", "Data"],
-    role: "Full-Stack",
-    system: "Enterprise",
-    focus: "Financial Data",
-    platform: "Web",
+    slug: "id-verify",
+    name: "ID Verify",
+    tone: "#262238",
+    category: "Biometric Identity",
+    tagline: "Document analysis, face matching and presentation-attack detection, with an Android SDK.",
+    credit: "Built as senior AI engineer for a confidential client (NDA).",
+    disciplines: ["AI", "Identity", "Mobile"],
+    role: null,
+    system: "Verification pipeline",
+    focus: "Computer vision",
+    platform: "Web · Android SDK",
     year: null,
-    stack: ["React", "TypeScript", "Python", "Azure Functions", "Azure SQL"],
-    status: null, // VERIFY: state production deployment status once confirmed.
-    links: [], // VERIFY: add the live application URL.
-    assetDir: "Fund-Clarity",
-    cover: "image.png",
-    coverPosition: "left center",
-    screens: [
-      { file: "image copy.png", caption: "Overview — AUM by product and submission status" },
-      { file: "image copy 3.png", caption: "Compare — this quarter against last" },
-      { file: "image copy 2.png", caption: "Products" },
-      { file: "image copy 4.png", caption: "Reporting periods" },
-    ],
+    stack: null,
+    status: null,
+    assetDir: "ID-Verify",
+    cover: "00-Cover Image.png",
     featured: 1,
+    // Use synthetic identity data and consented demonstration images only.
     sections: [
       {
         title: "Overview",
         blocks: [
           text(
-            "Fund Clarity is an enterprise financial reporting platform designed to centralize investment fund information, financial calculations, and reporting workflows. It replaces fragmented data entry and spreadsheet-dependent processes with a structured application for managing products, investors, loans, and reporting periods.",
+            "ID Verify is a biometric identity verification platform combining document analysis, facial recognition, presentation attack detection, and mobile SDK integration. It is designed to support identity verification workflows across applications and connected systems.",
           ),
         ],
       },
@@ -100,7 +95,7 @@ export const projects: Project[] = [
         title: "Challenge",
         blocks: [
           text(
-            "Financial reporting requires consistency across multiple data sources, currencies, reporting periods, and user roles. Changes to investor positions, debt, or fund valuations must be reflected accurately without compromising historical information. The core challenge was translating complex financial rules into a reliable, maintainable application.",
+            "Identity verification must balance accuracy, security, usability, and processing performance. Document images can vary in quality, facial captures may be affected by lighting and pose, and presentation attacks introduce additional risk. These challenges become more demanding when verification must also operate through mobile SDKs.",
           ),
         ],
       },
@@ -108,7 +103,7 @@ export const projects: Project[] = [
         title: "Architecture",
         blocks: [
           text(
-            "The platform uses a React and TypeScript frontend connected to Python-based APIs running through Azure services, with Azure SQL providing structured data storage. Backend services manage financial calculations, reporting workflows, data validation, and permissions. Administrative controls govern reporting periods and access.",
+            "The verification pipeline separates document capture, image quality assessment, document analysis, face processing, presentation attack detection, and identity matching. An Android SDK provides an integration surface for mobile applications, while backend services coordinate verification sessions and results.",
           ),
         ],
       },
@@ -116,26 +111,78 @@ export const projects: Project[] = [
         title: "Implementation",
         blocks: [
           text(
-            "The calculation layer supports NAV and INREV AUM reporting, investor roll-forwards, and loan changes between reporting periods. Automated tests validate key calculation scenarios.",
+            "Worked on document and facial image processing, OCR and MRZ extraction, face matching, liveness and presentation attack detection, and SDK integration. The platform design also addresses image quality controls, verification status management, and secure handling of sensitive identity information.",
           ),
-          {
-            type: "list",
-            items: [
-              "Product and investor management",
-              "Debt calculations and loan changes between reporting periods",
-              "Financial reporting workflows with multi-currency handling",
-              "CSV imports with validation",
-              "Search, pagination and administrative controls",
-            ],
-          },
         ],
       },
       {
         title: "Outcome",
         blocks: [
           text(
-            "Delivered an integrated reporting application with centralized financial data, repeatable calculations, and structured administrative workflows. Key calculation scenarios passed automated verification, and core investor, loan, and reporting operations were tested.",
+            "Developed an integrated identity verification workflow spanning document and biometric processing with mobile integration capabilities.",
           ),
+          // VERIFY: distinguish implemented modules from those in development; add accuracy/latency only when independently validated.
+        ],
+      },
+    ],
+  },
+  {
+    slug: "aether",
+    name: "Aether",
+    tone: "#1d2230",
+    category: "AI Automation",
+    tagline: "A visual workspace for designing, running and managing AI automation workflows.",
+    disciplines: ["AI", "Enterprise"],
+    role: null,
+    system: "Agent orchestration",
+    focus: "Visual workflow design",
+    platform: "Web",
+    year: null,
+    stack: null, // VERIFY: document backend technologies and persistence from the implementation.
+    status: null,
+    assetDir: "Aether",
+    cover: "00.png",
+    video: "00-cover.mp4",
+    featured: 2,
+    sections: [
+      {
+        title: "Overview",
+        blocks: [
+          text(
+            "Aether is a visual AI automation platform designed to make intelligent workflows easier to build, organize, and manage. It brings together workflow design, AI-assisted processing, and automation orchestration in a unified workspace.",
+          ),
+        ],
+      },
+      {
+        title: "Challenge",
+        blocks: [
+          text(
+            "AI-powered workflows can become difficult to maintain as the number of steps, integrations, and decision points increases. The challenge is to provide a clear visual environment while keeping workflow definitions structured, execution behavior predictable, and failures understandable.",
+          ),
+        ],
+      },
+      {
+        title: "Architecture",
+        blocks: [
+          text(
+            "The platform is organized around a visual workflow editor, structured workflow definitions, an orchestration layer, and integrations with AI models and external services. Execution state, step dependencies, and operational feedback are central architectural concerns.",
+          ),
+        ],
+      },
+      {
+        title: "Implementation",
+        blocks: [
+          text(
+            "Designed the agent-building experience around connected workflow steps, configuration controls, and reusable automation patterns. The interface emphasizes clarity when navigating complex workflows and managing AI-powered operations.",
+          ),
+          // VERIFY: document the implemented execution engine, model integrations and monitoring separately from planned features.
+        ],
+      },
+      {
+        title: "Outcome",
+        blocks: [
+          text("Created a cohesive product experience for designing and managing AI automation workflows."),
+          // VERIFY: add a working end-to-end workflow and its execution results.
         ],
       },
     ],
@@ -221,93 +268,37 @@ export const projects: Project[] = [
       },
     ],
   },
-
-  /* ── Part II — AI, security and intelligent systems ────────────────── */
   {
-    slug: "aether",
-    name: "Aether",
-    tone: "#1d2230",
-    category: "AI Automation",
-    tagline: "A visual workspace for designing, running and managing AI automation workflows.",
-    disciplines: ["AI", "Enterprise"],
-    role: null,
-    system: "Agent orchestration",
-    focus: "Visual workflow design",
+    slug: "fund-clarity",
+    name: "Fund Clarity",
+    tone: "#d6dbd2",
+    category: "Enterprise Financial Reporting",
+    tagline: "Enterprise financial reporting, built around data integrity and precise calculation logic.",
+    disciplines: ["Enterprise", "Data"],
+    role: "Full-Stack",
+    system: "Enterprise",
+    focus: "Financial Data",
     platform: "Web",
     year: null,
-    stack: null, // VERIFY: document backend technologies and persistence from the implementation.
-    status: null,
-    assetDir: "Aether",
-    cover: "00.png",
-    video: "00-cover.mp4",
-    featured: 2,
-    sections: [
-      {
-        title: "Overview",
-        blocks: [
-          text(
-            "Aether is a visual AI automation platform designed to make intelligent workflows easier to build, organize, and manage. It brings together workflow design, AI-assisted processing, and automation orchestration in a unified workspace.",
-          ),
-        ],
-      },
-      {
-        title: "Challenge",
-        blocks: [
-          text(
-            "AI-powered workflows can become difficult to maintain as the number of steps, integrations, and decision points increases. The challenge is to provide a clear visual environment while keeping workflow definitions structured, execution behavior predictable, and failures understandable.",
-          ),
-        ],
-      },
-      {
-        title: "Architecture",
-        blocks: [
-          text(
-            "The platform is organized around a visual workflow editor, structured workflow definitions, an orchestration layer, and integrations with AI models and external services. Execution state, step dependencies, and operational feedback are central architectural concerns.",
-          ),
-        ],
-      },
-      {
-        title: "Implementation",
-        blocks: [
-          text(
-            "Designed the agent-building experience around connected workflow steps, configuration controls, and reusable automation patterns. The interface emphasizes clarity when navigating complex workflows and managing AI-powered operations.",
-          ),
-          // VERIFY: document the implemented execution engine, model integrations and monitoring separately from planned features.
-        ],
-      },
-      {
-        title: "Outcome",
-        blocks: [
-          text("Created a cohesive product experience for designing and managing AI automation workflows."),
-          // VERIFY: add a working end-to-end workflow and its execution results.
-        ],
-      },
+    stack: ["React", "TypeScript", "Python", "Azure Functions", "Azure SQL"],
+    status: null, // VERIFY: state production deployment status once confirmed.
+    links: [], // VERIFY: add the live application URL.
+    assetDir: "Fund-Clarity",
+    cover: "image.png",
+    coverPosition: "left center",
+    screens: [
+      { file: "image copy.png", caption: "Overview — AUM by product and submission status" },
+      { file: "image copy 3.png", caption: "Compare — this quarter against last" },
+      { file: "image copy 2.png", caption: "Products" },
+      { file: "image copy 4.png", caption: "Reporting periods" },
     ],
-  },
-  {
-    slug: "id-verify",
-    name: "ID Verify",
-    tone: "#262238",
-    category: "Biometric Identity",
-    tagline: "Document analysis, face matching and presentation-attack detection, with an Android SDK.",
-    disciplines: ["AI", "Identity", "Mobile"],
-    role: null,
-    system: "Verification pipeline",
-    focus: "Computer vision",
-    platform: "Web · Android SDK",
-    year: null,
-    stack: null,
-    status: null,
-    assetDir: "ID-Verify",
-    cover: "00-Cover Image.png",
     featured: 4,
-    // Use synthetic identity data and consented demonstration images only.
     sections: [
       {
         title: "Overview",
         blocks: [
           text(
-            "ID Verify is a biometric identity verification platform combining document analysis, facial recognition, presentation attack detection, and mobile SDK integration. It is designed to support identity verification workflows across applications and connected systems.",
+            "Fund Clarity is an enterprise financial reporting platform designed to centralize investment fund information, financial calculations, and reporting workflows. It replaces fragmented data entry and spreadsheet-dependent processes with a structured application for managing products, investors, loans, and reporting periods.",
           ),
         ],
       },
@@ -315,7 +306,7 @@ export const projects: Project[] = [
         title: "Challenge",
         blocks: [
           text(
-            "Identity verification must balance accuracy, security, usability, and processing performance. Document images can vary in quality, facial captures may be affected by lighting and pose, and presentation attacks introduce additional risk. These challenges become more demanding when verification must also operate through mobile SDKs.",
+            "Financial reporting requires consistency across multiple data sources, currencies, reporting periods, and user roles. Changes to investor positions, debt, or fund valuations must be reflected accurately without compromising historical information. The core challenge was translating complex financial rules into a reliable, maintainable application.",
           ),
         ],
       },
@@ -323,7 +314,7 @@ export const projects: Project[] = [
         title: "Architecture",
         blocks: [
           text(
-            "The verification pipeline separates document capture, image quality assessment, document analysis, face processing, presentation attack detection, and identity matching. An Android SDK provides an integration surface for mobile applications, while backend services coordinate verification sessions and results.",
+            "The platform uses a React and TypeScript frontend connected to Python-based APIs running through Azure services, with Azure SQL providing structured data storage. Backend services manage financial calculations, reporting workflows, data validation, and permissions. Administrative controls govern reporting periods and access.",
           ),
         ],
       },
@@ -331,17 +322,26 @@ export const projects: Project[] = [
         title: "Implementation",
         blocks: [
           text(
-            "Worked on document and facial image processing, OCR and MRZ extraction, face matching, liveness and presentation attack detection, and SDK integration. The platform design also addresses image quality controls, verification status management, and secure handling of sensitive identity information.",
+            "The calculation layer supports NAV and INREV AUM reporting, investor roll-forwards, and loan changes between reporting periods. Automated tests validate key calculation scenarios.",
           ),
+          {
+            type: "list",
+            items: [
+              "Product and investor management",
+              "Debt calculations and loan changes between reporting periods",
+              "Financial reporting workflows with multi-currency handling",
+              "CSV imports with validation",
+              "Search, pagination and administrative controls",
+            ],
+          },
         ],
       },
       {
         title: "Outcome",
         blocks: [
           text(
-            "Developed an integrated identity verification workflow spanning document and biometric processing with mobile integration capabilities.",
+            "Delivered an integrated reporting application with centralized financial data, repeatable calculations, and structured administrative workflows. Key calculation scenarios passed automated verification, and core investor, loan, and reporting operations were tested.",
           ),
-          // VERIFY: distinguish implemented modules from those in development; add accuracy/latency only when independently validated.
         ],
       },
     ],
@@ -403,8 +403,6 @@ export const projects: Project[] = [
       },
     ],
   },
-
-  /* ── Part III — Business platforms and commercial applications ─────── */
   {
     slug: "tavola",
     name: "Tavola",

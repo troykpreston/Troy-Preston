@@ -427,3 +427,15 @@ button.chip:hover {
     transform: none;
   }
 }
+
+/* Engagement note under a project tagline (e.g. NDA credit). */
+.credit {
+  display: block;
+  margin-top: 8px;
+  font-family: var(--font-mono);
+  font-size: var(--fs-label);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  line-height: 1.5;
+  color: var(--accent);
+}

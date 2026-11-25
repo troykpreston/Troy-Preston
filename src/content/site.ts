@@ -11,17 +11,17 @@ export const site = {
   name: "Troy K. Preston",
   /** Shown in the header wordmark. */
   wordmark: "Troy Preston",
-  role: "Senior Software Engineer",
+  role: "Senior AI Engineer",
   url: "https://troykpreston.github.io/Troy-Preston",
   description:
-    "Troy K. Preston — Senior Software Engineer with 6+ years building scalable web, mobile and cloud-native applications across SaaS, enterprise and telecommunications.",
+    "Troy K. Preston — Senior AI Engineer with 6+ years building production software: computer vision and identity verification, AI workflow platforms, and scalable web, mobile and cloud-native applications.",
 
   /** Hero headline. Each string is one line of the masked reveal; wrap words in *asterisks* for the italic serif accent. */
   headline: ["I turn *complex systems*", "into elegant,", "reliable software."],
 
   /** Short paragraph beside the hero headline. */
   intro:
-    "Senior Software Engineer with 6+ years building web, mobile and cloud-native systems — from data model and backend services to the interface people use every day.",
+    "Senior AI Engineer with 6+ years building production software — computer vision and identity verification, AI workflow platforms, and the web, mobile and cloud systems around them.",
 
   /** The statement that lights up word by word as you scroll. */
   statement:
@@ -40,6 +40,12 @@ export const site = {
 
   /** Professional background — software engineering roles, most recent first. */
   experience: [
+    {
+      period: "2026 — Present",
+      role: "Senior AI Engineer (Contract)",
+      company: "Confidential client (NDA)",
+      note: null,
+    },
     {
       period: "2023 — 2026",
       role: "Senior Software Engineer",
@@ -78,6 +84,7 @@ export const site = {
 
   /** Grouped technical skills. */
   skills: [
+    { group: "AI & CV", items: ["PyTorch", "ONNX Runtime", "OpenCV", "Face recognition", "Liveness detection", "OCR"] },
     { group: "Languages", items: ["JavaScript", "TypeScript", "Java", "Python", "SQL", "HTML5", "CSS3"] },
     { group: "Frontend", items: ["React", "Angular", "Redux", "Next.js", "Flutter", "Tailwind CSS"] },
     { group: "Backend", items: ["Spring Boot", "Node.js", "Express.js", "REST APIs", "Microservices"] },
@@ -88,7 +95,6 @@ export const site = {
 
   /** Short biography paragraphs for the About section. */
   bio: [
-    "Senior Software Engineer with 6+ years of experience building scalable web, mobile and cloud-native applications across SaaS, enterprise and telecommunications environments.",
     "I specialise in full-stack development with TypeScript, React, Angular, Java, Spring Boot and Python on AWS and Firebase — modernising legacy systems, optimising performance, designing microservice architectures and mentoring engineering teams. I care about reliable, user-focused software, with a strong emphasis on scalability, automation, accessibility and clean engineering practice.",
   ] as string[],
 
@@ -99,14 +105,14 @@ export const site = {
 /** Areas of practice. `evidence` links to project slugs so every claim points at real work. */
 export const capabilities = [
   {
-    title: "Full-stack product engineering",
-    body: "Web platforms, dashboards and the APIs behind them — from data model to the last pixel.",
-    evidence: ["fund-clarity", "telebook", "tavola", "forme"],
-  },
-  {
     title: "AI engineering",
     body: "Agent orchestration, model pipelines, evaluation and the infrastructure that keeps them honest.",
     evidence: ["aether", "id-verify"],
+  },
+  {
+    title: "Full-stack product engineering",
+    body: "Web platforms, dashboards and the APIs behind them — from data model to the last pixel.",
+    evidence: ["fund-clarity", "telebook", "tavola"],
   },
   {
     title: "Identity & access",

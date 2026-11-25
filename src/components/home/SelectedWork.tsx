@@ -54,6 +54,7 @@ export function SelectedWork() {
                   <span className="label feat__num">{pad(number)}</span>
                   <h3 className="feat__name">{p.name}</h3>
                   <p className="feat__tag">{p.tagline}</p>
+                  {p.credit && <p className="credit">{p.credit}</p>}
                   <ul className="feat__disc">
                     {p.disciplines.map((d) => (
                       <li key={d} className="label">

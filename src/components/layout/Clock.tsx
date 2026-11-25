@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 
-/** Live local time in the configured timezone. Renders nothing until mounted (no hydration mismatch). */
+/** Live local time in the configured timezone. Shows "Eastern Time" until mounted, so static HTML never shows a blank "--:--". */
 export function Clock({ timezone, className }: { timezone: string; className?: string }) {
   const [now, setNow] = useState<string | null>(null);
 
@@ -16,7 +16,7 @@ export function Clock({ timezone, className }: { timezone: string; className?: s
 
   return (
     <time className={className} suppressHydrationWarning>
-      {now ?? "--:--"}
+      {now ?? "Eastern Time"}
     </time>
   );
 }

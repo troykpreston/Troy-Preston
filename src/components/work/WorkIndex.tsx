@@ -12,6 +12,7 @@ export type IndexItem = {
   number: string;
   name: string;
   tagline: string;
+  credit: string | null;
   disciplines: string[];
   year: string | null;
   tone: string;
@@ -123,7 +124,10 @@ export function WorkIndex({ items, disciplines }: { items: IndexItem[]; discipli
                     <TransitionLink href={`/work/${p.slug}`} className="row__link">
                       <span className="label row__num">{p.number}</span>
                       <span className="row__name">{p.name}</span>
-                      <span className="row__tag rows__hide-sm">{p.tagline}</span>
+                      <span className="row__tag rows__hide-sm">
+                        {p.tagline}
+                        {p.credit && <span className="credit">{p.credit}</span>}
+                      </span>
                       <span className="row__disc label rows__hide-md">{p.disciplines.join(" · ")}</span>
                       <span className="row__year label rows__end">
                         {p.year ? `${p.year} ` : null}<span className="arrow">→</span>
@@ -168,6 +172,7 @@ export function WorkIndex({ items, disciplines }: { items: IndexItem[]; discipli
                         <span className="label">{p.number}</span>
                         <h2 className="card__name">{p.name} <span className="arrow card__arrow" aria-hidden="true">→</span></h2>
                         <p className="card__tag muted">{p.tagline}</p>
+                        {p.credit && <p className="credit">{p.credit}</p>}
                       </div>
                     </TransitionLink>
                   </motion.li>

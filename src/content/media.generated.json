@@ -280,7 +280,7 @@
   "BD-Clarity": [
     {
       "file": "image copy 2.png",
-      "src": "/media/bd-clarity/image-copy-2-ad380b0a.webp",
+      "src": "/media/bd-clarity/image-copy-2-6b39f5ed.webp",
       "kind": "image",
       "caption": "Image copy 2",
       "width": 2267,
@@ -288,7 +288,7 @@
     },
     {
       "file": "image copy 3.png",
-      "src": "/media/bd-clarity/image-copy-3-4fa5e0c1.webp",
+      "src": "/media/bd-clarity/image-copy-3-6781472d.webp",
       "kind": "image",
       "caption": "Image copy 3",
       "width": 2267,
@@ -296,7 +296,7 @@
     },
     {
       "file": "image copy 4.png",
-      "src": "/media/bd-clarity/image-copy-4-8610bc28.webp",
+      "src": "/media/bd-clarity/image-copy-4-89ec946a.webp",
       "kind": "image",
       "caption": "Image copy 4",
       "width": 2267,
@@ -304,7 +304,7 @@
     },
     {
       "file": "image copy 5.png",
-      "src": "/media/bd-clarity/image-copy-5-d25ff39d.webp",
+      "src": "/media/bd-clarity/image-copy-5-de5a673d.webp",
       "kind": "image",
       "caption": "Image copy 5",
       "width": 2267,
@@ -312,7 +312,7 @@
     },
     {
       "file": "image copy 6.png",
-      "src": "/media/bd-clarity/image-copy-6-0c440668.webp",
+      "src": "/media/bd-clarity/image-copy-6-4ba6005d.webp",
       "kind": "image",
       "caption": "Image copy 6",
       "width": 2267,
@@ -320,7 +320,7 @@
     },
     {
       "file": "image copy 7.png",
-      "src": "/media/bd-clarity/image-copy-7-693f4bed.webp",
+      "src": "/media/bd-clarity/image-copy-7-ffb16cb7.webp",
       "kind": "image",
       "caption": "Image copy 7",
       "width": 2267,
@@ -328,7 +328,7 @@
     },
     {
       "file": "image copy 8.png",
-      "src": "/media/bd-clarity/image-copy-8-57132df9.webp",
+      "src": "/media/bd-clarity/image-copy-8-8f44a112.webp",
       "kind": "image",
       "caption": "Image copy 8",
       "width": 2267,
@@ -336,7 +336,7 @@
     },
     {
       "file": "image copy.png",
-      "src": "/media/bd-clarity/image-copy-93057614.webp",
+      "src": "/media/bd-clarity/image-copy-e710764b.webp",
       "kind": "image",
       "caption": "Image copy",
       "width": 2267,
@@ -344,7 +344,7 @@
     },
     {
       "file": "image.png",
-      "src": "/media/bd-clarity/image-081298a2.webp",
+      "src": "/media/bd-clarity/image-71c4863e.webp",
       "kind": "image",
       "caption": "Image",
       "width": 2267,
@@ -526,7 +526,7 @@
   "Fund-Clarity": [
     {
       "file": "image copy 2.png",
-      "src": "/media/fund-clarity/image-copy-2-59152a0c.webp",
+      "src": "/media/fund-clarity/image-copy-2-094a3126.webp",
       "kind": "image",
       "caption": "Image copy 2",
       "width": 2267,
@@ -534,7 +534,7 @@
     },
     {
       "file": "image copy 3.png",
-      "src": "/media/fund-clarity/image-copy-3-cbd0ad94.webp",
+      "src": "/media/fund-clarity/image-copy-3-d87a2756.webp",
       "kind": "image",
       "caption": "Image copy 3",
       "width": 2267,
@@ -542,7 +542,7 @@
     },
     {
       "file": "image copy 4.png",
-      "src": "/media/fund-clarity/image-copy-4-11edd018.webp",
+      "src": "/media/fund-clarity/image-copy-4-bdc49a3b.webp",
       "kind": "image",
       "caption": "Image copy 4",
       "width": 2267,
@@ -550,7 +550,7 @@
     },
     {
       "file": "image copy.png",
-      "src": "/media/fund-clarity/image-copy-804df5d0.webp",
+      "src": "/media/fund-clarity/image-copy-32a85910.webp",
       "kind": "image",
       "caption": "Image copy",
       "width": 2267,
@@ -558,7 +558,7 @@
     },
     {
       "file": "image.png",
-      "src": "/media/fund-clarity/image-a497b7fa.webp",
+      "src": "/media/fund-clarity/image-06927a55.webp",
       "kind": "image",
       "caption": "Image",
       "width": 2267,
@@ -568,7 +568,7 @@
   "ID-Verify": [
     {
       "file": "00-Cover Image.png",
-      "src": "/media/id-verify/00-cover-image-5908cde1.webp",
+      "src": "/media/id-verify/00-cover-image-117d44b9.webp",
       "kind": "image",
       "caption": "Cover Image",
       "width": 1448,
@@ -637,14 +637,6 @@
       "caption": "Document data",
       "width": 2560,
       "height": 1920
-    },
-    {
-      "file": "09-Journyes.png",
-      "src": "/media/id-verify/09-journyes-6b734895.webp",
-      "kind": "image",
-      "caption": "Journyes",
-      "width": 2202,
-      "height": 1336
     },
     {
       "file": "11-insights.png",
